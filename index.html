@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>WebGL Timeline</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<!-- <script src="js/lib/ImageBitmapLoader.js"></script> -->
+		<script src="js/lib/three.js"></script>
+		<script src="js/lib/Detector.js"></script>
+		<script src="js/lib/FlyControls.js"></script>
+		<!-- load the events data -->
+		<script src="data/events.js"></script>
+		<!-- check for WebGL / mobile device -->
+		<script src="js/check-support.js"></script>
+		<!-- initialize UI controls -->
+ 		<script src="js/init-ui.js"></script>
+ 		<!-- visualize events data -->
+		<script src="js/timeline.js"></script>
+		<script>
+			setup();
+			animate();
+		</script>
+	</body>
+</html>

@@ -9,7 +9,7 @@ var SPIN = false;
 var clock = new THREE.Clock();
 var container;
 var camera, scene, controls, renderer, raycaster;
-var group, entities;
+var group, entities, dates;
 
 var mouse = new THREE.Vector2();
 var INTERSECTED = null;
@@ -37,25 +37,26 @@ function addImage( image ) {
 		.load( picture, function( imageFile ) {
 			var texture = new THREE.CanvasTexture( imageFile );
 			texture.name = title;
-			addEntity( texture, title, image['URL'] );
+			addEvent( texture, title, image['URL'] );
 		}
 	);
-	// var year = image['Year'];
-	// new THREE.FontLoader()
-	// 	.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
-	// 		var geometry = new THREE.TextGeometry( year, {
-	// 			font: font,
-	// 			size: 80,
-	// 			height: 5,
-	// 			curveSegments: 12,
-	// 			bevelEnabled: true,
-	// 			bevelThickness: 10,
-	// 			bevelSize: 8,
-	// 			bevelOffset: 0,
-	// 			bevelSegments: 5
-	// 		});
-	// 	}
-	// );
+	new THREE.FontLoader()
+		.load( 'fonts/helvetiker_regular.typeface.json', function ( font ) {
+			var geometry = new THREE.TextGeometry( image['Year'], {
+				font: font,
+				size: 1,
+				height: 1,
+				curveSegments: 12,
+				bevelEnabled: true,
+				bevelThickness: 2,
+				bevelSize: 2,
+				bevelOffset: 0,
+				bevelSegments: 5
+			});
+			geometry.name = title;
+			addDate( geometry, title );
+		}
+	);
 };
 
 function positionEvent( entity ) {
@@ -75,7 +76,25 @@ function positionEvent( entity ) {
 	return entity;
 };
 
-function addEntity( texture, name, link ) {
+function positionDate( entity ) {
+	var index;
+	for (var i = 0; i < EVENT_COUNT; i++) {
+		var event = EVENTS[i];
+		if (event['Title'] == entity.name) {
+			index = event.index;
+			break;
+		}
+	}
+	// var x = index - (EVENT_COUNT / 2);
+	var offset = -18;
+	var x = (index * 4) + offset;
+	var y = -4;
+	entity.position.set( x, y, -20 );
+	entity.rotation.set( 0, 0, 0);
+	return entity;
+};
+
+function addEvent( texture, name, link ) {
 	// console.log("Entity Width:", texture.image.naturalWidth, "Entity Height:", texture.image.naturalHeight);
 	var aspectRatio = texture.image.naturalWidth / texture.image.naturalHeight;
 	// console.log("Aspect Ratio:", aspectRatio);
@@ -88,6 +107,16 @@ function addEntity( texture, name, link ) {
 	// entity.position.set( Math.random() * 12 - 1, Math.random() * 12 - 1, Math.random() * 12 - 1 );
 	// entity.rotation.set( Math.random() * 12 * Math.PI, Math.random() * 12 * Math.PI, Math.random() * 12 * Math.PI );
 	entities.add( entity );
+};
+
+function addDate( geometry, name ) {
+	// var material = new THREE.MeshBasicMaterial( { map: texture, side: THREE.DoubleSide } );
+	var datetext = new THREE.Mesh( geometry );
+	datetext.name = name;
+	datetext = positionDate(datetext);
+	// entity.position.set( Math.random() * 12 - 1, Math.random() * 12 - 1, Math.random() * 12 - 1 );
+	// entity.rotation.set( Math.random() * 12 * Math.PI, Math.random() * 12 * Math.PI, Math.random() * 12 * Math.PI );
+	dates.add( datetext );
 };
 
 function resetCamera( zoom ) {
@@ -128,11 +157,16 @@ function setup() {
 	// GRID
 	group.add( new THREE.GridHelper( 10, 20, 'turquoise' ) );
 
-	// EVENTS
+	// EVENT IMAGES
 	entities = new THREE.Group();
 	group.add( entities );
+	// EVENT DATES
+	dates = new THREE.Group()
+	group.add( dates );
 
 	addEvents();
+
+
 
 	// RENDERER
 	renderer = new THREE.WebGLRenderer( { antialias: true } );

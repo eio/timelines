@@ -8,20 +8,6 @@ body {
 	overscroll-behavior: none;
 }
 
-a {
-	color: #ff0;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-button {
-	cursor: pointer;
-	text-transform: uppercase;
-}
-
 canvas {
 	display: block;
 }
@@ -41,10 +27,6 @@ canvas {
 	z-index: 1; /* TODO Solve this in HTML */
 }
 
-a, button, input, select {
-	pointer-events: auto;
-}
-
 .dg.ac {
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -61,4 +43,100 @@ a, button, input, select {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+#menu {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.element {
+	cursor: pointer;
+	width: 400px;
+	height: 400px;
+	box-shadow: 0px 0px 12px rgba(80,200,255,0.5);
+	border: 1px solid rgba(80,160,208,0.25);
+	font-family: Helvetica, sans-serif;
+	text-align: center;
+	line-height: normal;
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.element:hover {
+	box-shadow: 0px 0px 12px rgba(80,200,255,0.75);
+	border: 1px solid rgba(80,160,255,0.75);
+}
+
+	.element .number {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		font-size: 12px;
+		color: rgba(80,160,255,0.75);
+	}
+
+	.element .symbol {
+		position: absolute;
+		top: 40px;
+		left: 0px;
+		right: 0px;
+		font-size: 60px;
+		font-weight: bold;
+		color: rgba(255,255,255,0.75);
+		text-shadow: 0 0 10px rgba(80,120,255,0.95);
+	}
+
+	.element .details {
+		padding: 20px;
+		position: absolute;
+		top: 100px;
+		left: 0px;
+		right: 0px;
+		font-size: 22px;
+		color: rgba(100,160,255,0.75);
+
+	}
+
+a {
+	color: #8ff;
+	/*color: #ff0;*/
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a, button, input, select {
+	pointer-events: auto;
+}
+
+button {
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+button {
+	color: rgba(80,120,168,0.75);
+	background: transparent;
+	outline: 1px solid rgba(100,160,208,0.75);
+	border: 0px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: rgba(40,80,127,0.5);
+}
+
+button:active {
+	color: #000000;
+	background-color: rgba(40,140,255,0.75);
 }

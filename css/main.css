@@ -78,7 +78,7 @@ canvas {
 		position: absolute;
 		top: 20px;
 		right: 20px;
-		font-size: 12px;
+		font-size: 0px;
 		color: rgba(80,160,255,0.75);
 	}
 
@@ -124,19 +124,19 @@ button {
 }
 
 button {
-	color: rgba(80,120,168,0.75);
+	color: rgba(80,120,220,0.75);
 	background: transparent;
-	outline: 1px solid rgba(100,160,208,0.75);
+	outline: 1px solid rgba(100,160,240,0.75);
 	border: 0px;
 	padding: 5px 10px;
 	cursor: pointer;
 }
 
 button:hover {
-	background-color: rgba(40,80,127,0.5);
+	background-color: rgba(40,80,200,0.5);
 }
 
 button:active {
-	color: #000000;
-	background-color: rgba(40,140,255,0.75);
+	color: #FFFFFF;
+	background-color: rgba(40,80,240,0.5);
 }

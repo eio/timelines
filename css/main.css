@@ -54,8 +54,8 @@ canvas {
 
 .element {
 	cursor: pointer;
-	width: 400px;
-	height: 400px;
+	width: 800px;
+	height: 800px;
 	box-shadow: 0px 0px 12px rgba(80,200,255,0.5);
 	border: 1px solid rgba(80,160,208,0.25);
 	font-family: Helvetica, sans-serif;
@@ -82,7 +82,7 @@ canvas {
 		color: rgba(80,160,255,0.75);
 	}
 
-	.element .symbol {
+	.element .year {
 		position: absolute;
 		top: 40px;
 		left: 0px;

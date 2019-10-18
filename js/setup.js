@@ -1,8 +1,9 @@
 import * as THREE from './lib/three.module.js';
-
 import { TWEEN } from './lib/jsm/tween.module.min.js';
 import { TrackballControls } from './lib/jsm/TrackballControls.js';
 import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
+
+export { init, animate };
 
 var table = [
 	"2020", "[event]", "1.00794", 1, 4,
@@ -32,9 +33,6 @@ var controls;
 
 var objects = [];
 var targets = { table: [], sphere: [], helix: [], grid: [] };
-
-init();
-animate();
 
 function init() {
 

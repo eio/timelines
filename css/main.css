@@ -94,14 +94,19 @@ canvas {
 	}
 
 	.element .details {
-		padding: 20px;
+		padding: 40px;
 		position: absolute;
 		top: 100px;
 		left: 0px;
 		right: 0px;
 		font-size: 22px;
 		color: rgba(100,160,255,0.75);
+	}
 
+	.element img {
+		margin-top: 100px;
+		max-width: 500px;
+		/*max-height: 90%;*/
 	}
 
 a {

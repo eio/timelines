@@ -62,8 +62,8 @@ function init() {
 		var element = document.createElement( 'div' );
 		element.className = 'element';
 		// var alpha = ( Math.random() * 0.5 + 0.25 );
-		var alpha = 0.25;
-		element.style.backgroundColor = 'rgba(0,40,128,' + alpha + ')';
+		var alpha = 0.4;
+		element.style.backgroundColor = 'rgba(0,40,120,' + alpha + ')';
 
 		var number = document.createElement( 'div' );
 		number.className = 'number';

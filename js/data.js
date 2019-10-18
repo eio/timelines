@@ -11,7 +11,7 @@ var DataTable = [
 	"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Spire_Weather_2019.png/800px-Spire_Weather_2019.png",
 	4, 0,
 	"2017-2016",
-	"NOAA begins its inaugural Commercial Weather Data Pilot (CWDP). Round One culminates in the first ever contracts for private weather satellites being issued to Spire Global and GeoOptics.",
+	"NOAA holds its inaugural Commercial Weather Data Pilot (CWDP). Round One culminates in the first ever contracts for private weather satellites being issued to Spire Global and GeoOptics.",
 	"http://cdn.parabolicarc.com/wp-content/uploads/2016/04/noaa_commercial_weather_data_pilot.jpg",
 	5, 0,
 	"2016",

@@ -133,14 +133,15 @@ function init() {
 	for ( var i = 0, l = objects.length; i < l; i ++ ) {
 
 		// var tune = 0.175;
-		var tune = 0.275;
+		var tune = 0.5;
 		var theta = i * tune + Math.PI;
-		var yoffset = 800;
-		var y = - ( i * 80 ) + yoffset;
+		var yoffset = 1500;
+		var ystretch = 200;
+		var y = - ( i * ystretch ) + yoffset;
 
 		var object = new THREE.Object3D();
 
-		object.position.setFromCylindricalCoords( 3000, theta, y );
+		object.position.setFromCylindricalCoords( 1600, theta, y );
 
 		vector.x = object.position.x * 2;
 		vector.y = object.position.y;

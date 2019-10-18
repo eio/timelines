@@ -15,9 +15,9 @@ var controls;
 var objects = [];
 var targets = { table: [], sphere: [], helix: [], grid: [] };
 
-function resetCamera() {
-	camera.position.set(0, 0, INIT_CAMERA_Z); // Set position like this
-	camera.lookAt(new THREE.Vector3(0,0,10000)); // Set look at coordinate like this
+function companyHalt() {
+	// camera.position.set(0, 0, INIT_CAMERA_Z); // Set position like this
+	// camera.lookAt(new THREE.Vector3(0,0,10000)); // Set look at coordinate like this
 	for (var i=0; i<objects.length; i++) {
 		objects[i].rotation.x = 0;
 		objects[i].rotation.y = 0;
@@ -30,25 +30,25 @@ function resetCamera() {
 }
 
 function init() {
-	document.body.addEventListener('keydown', function logKey(e) {
-	  	console.log(camera.position)
-	});
-	document.body.addEventListener('click', function down(e) {
-		var elem = e.target;
-		var parent = elem.parentElement;
-		var classes = [elem.className,parent.className,parent.parentElement.className];
-		switch(classes.indexOf('element')) {
-		  case 0:
-		    console.log(elem);
-		    break;
-		  case 1:
-		    console.log(parent);
-		    break;
-		  case 2:
-		  	console.log(parent.parentElement);
-		    break;
-		}
-	 });
+	// document.body.addEventListener('keydown', function logKey(e) {
+	//   	console.log(camera.position)
+	// });
+	// document.body.addEventListener('click', function down(e) {
+	// 	var elem = e.target;
+	// 	var parent = elem.parentElement;
+	// 	var classes = [elem.className,parent.className,parent.parentElement.className];
+	// 	switch(classes.indexOf('element')) {
+	// 	  case 0:
+	// 	    console.log(elem);
+	// 	    break;
+	// 	  case 1:
+	// 	    console.log(parent);
+	// 	    break;
+	// 	  case 2:
+	// 	  	console.log(parent.parentElement);
+	// 	    break;
+	// 	}
+	//  });
 
 	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
 	camera.position.z = INIT_CAMERA_Z;
@@ -178,7 +178,7 @@ function init() {
 	//
 
 	controls = new TrackballControls( camera, renderer.domElement );
-	controls.minDistance = 100;
+	controls.minDistance = 0;
 	controls.maxDistance = 10000;
 	controls.addEventListener( 'change', render );
 
@@ -219,6 +219,8 @@ function init() {
 }
 
 function transform( targets, duration ) {
+
+	companyHalt();
 
 	TWEEN.removeAll();
 

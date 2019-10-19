@@ -12,7 +12,7 @@ canvas {
 	display: block;
 }
 
-#info {
+/*#info {
 	position: absolute;
 	top: 0px;
 	width: 100%;
@@ -24,8 +24,9 @@ canvas {
 	-ms-user-select: none;
 	user-select: none;
 	pointer-events: none;
-	z-index: 1; /* TODO Solve this in HTML */
+	z-index: 1;
 }
+*/
 
 .dg.ac {
 	-moz-user-select: none;
@@ -134,7 +135,7 @@ button {
 button {
 	color: rgba(80,120,220,0.75);
 	background: transparent;
-	outline: 1px solid rgba(100,160,240,0.75);
+	outline: 1px solid rgba(80,120,220,0.75);
 	border: 0px;
 	padding: 5px 10px;
 	cursor: pointer;
@@ -147,4 +148,33 @@ button:hover {
 button:active {
 	color: #FFFFFF;
 	background-color: rgba(40,80,240,0.5);
+}
+
+#info {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	height: 30px;
+	width: 30px;
+	font-size: 30px;
+	text-align: center;
+	border-radius: 50%;
+	border: 2px solid rgba(80,120,220,0.75);
+	color: rgba(80,120,220,0.75);
+	cursor: pointer;
+	z-index: 1;
+}
+
+#info:hover {
+	color: rgba(80,120,220,0.75);
+	background-color: rgba(40,80,200,0.5);
+}
+
+#info:active {
+	color: rgba(255,255,255,1.0);
+	background-color: rgba(40,80,240,0.5);
+}
+
+#info div {
+	margin-top: 8%;
 }

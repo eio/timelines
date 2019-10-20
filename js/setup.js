@@ -221,9 +221,9 @@ function render() {
 	renderer.render( scene, camera );
 }
 
-document.getElementById('info').addEventListener('click', function info(e) {
-	window.location.href = 'https://github.com/eio/gnss-ro-timeline';
-});
+// document.getElementById('info').addEventListener('click', function info(e) {
+// 	window.location.href = 'https://github.com/eio/gnss-ro-timeline';
+// });
 
 // document.body.addEventListener('keydown', function logKey(e) {
 //   	console.log(camera.position)

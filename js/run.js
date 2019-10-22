@@ -1,3 +1,3 @@
-import { init, animate } from './setup.js';
+import { init, animate } from './visuals.js';
 init();
 animate();

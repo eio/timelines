@@ -9,6 +9,8 @@ import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 import { DataTable } from './data.js';
 var table = DataTable;
 
+var MIN_CONTROLS_DISTANCE = 0;
+var MAX_CONTROLS_DISTANCE = 12300;
 var INIT_CAMERA_Z = 8000;
 var camera, scene, renderer;
 var controls;
@@ -137,8 +139,8 @@ function init() {
 
 	controls = new TrackballControls( camera, renderer.domElement );
 	// controls = new OrbitControls( camera, renderer.domElement );
-	// controls.minDistance = 0;
-	controls.maxDistance = 10000;
+	controls.minDistance = MIN_CONTROLS_DISTANCE;
+	controls.maxDistance = MAX_CONTROLS_DISTANCE;
 	controls.addEventListener( 'change', render );
 
 	var button = document.getElementById( 'table' );

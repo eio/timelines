@@ -4,6 +4,7 @@
 		<title> GNSS-RO Timeline (three.js/css3d)</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="css/toggleswitch.css">
 		<link type="text/css" rel="stylesheet" href="css/main.css">
 		<link rel="icon" href="img/favicon.ico">
 	</head>
@@ -13,14 +14,19 @@
 		</div>
 		<div id="menu"></div>
 -->
-		<div id="dashboard"></div>
+<!-- 		<div class="switch">
+		  <input type="checkbox" name="toggle">
+		  <label for="toggle"><i></i></label>
+		  <span></span>
+		</div> -->
+		<!-- <div id="dashboard"></div> -->
 		<div id="container"></div>
 		<div id="datatypes">
-			<div id="ads-b">ADS-B</div>
-			<div id="ais">AIS</div>
-			<div id="gnss-ro">GNSS-RO</div>
-			<div id="isi">ISI</div> <!-- ionospheric scintillation indices -->
-			<div id="magnet">MAGNET</div> <!-- magnetometer data -->
+			<div id="ads-b">ADS-B</div> <!-- automatic dependent surveillance broadcast -->
+			<div id="ais">AIS</div> <!-- automatic identification system -->
+			<div id="gnss-ro">GNSS-RO</div> <!-- radio occultation -->
+			<div id="ism">ISM</div> <!-- ionospheric scintillation indices (i.s.monitor) -->
+			<div id="mag">MAG</div> <!-- magnetometer data -->
 			<div id="tec">TEC</div>  <!-- total electron content -->
 		</div>
 		<div id="buttons">

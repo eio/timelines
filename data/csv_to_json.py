@@ -14,5 +14,7 @@ with open(args.inputf, 'r') as csvfile:
   for e in reader:
     eventlist.append(e)
 
-with open('events.js', 'w') as outfile:
+datatype = args.inputf.replace('.csv','')
+
+with open(datatype+'.js', 'w') as outfile:
   outfile.write("export var EVENTS = %s%s" % (json.dumps(eventlist), ';'))

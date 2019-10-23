@@ -175,6 +175,7 @@ function init() {
 function companyHalt() {
 	// camera.position.set(0, 0, INIT_CAMERA_Z); // Set position like this
 	// camera.lookAt(new THREE.Vector3(0,0,10000)); // Set look at coordinate like this
+	// var duration = 100;
 	for (var i=0; i<objects.length; i++) {
 		objects[i].rotation.x = 0;
 		objects[i].rotation.y = 0;
@@ -183,11 +184,20 @@ function companyHalt() {
 		objects[i].quaternion.x = 0;
 		objects[i].quaternion.y = 0;
 		objects[i].quaternion.z = 0;
+		// var object = objects[ i ];
+		// new TWEEN.Tween( object.rotation )
+		// 	.to( { x: 0, y: 0, z: 0 }, Math.random() * duration + duration )
+		// 	.easing( TWEEN.Easing.Exponential.InOut )
+		// 	.start();
+		// new TWEEN.Tween( object.quaternion )
+		// 	.to( { x: 0, y: 0, z: 0, w: 1 }, Math.random() * duration + duration )
+		// 	.easing( TWEEN.Easing.Exponential.InOut )
+		// 	.start();
 	}
 }
 
 function transform( targets, duration ) {
-	companyHalt();
+	// companyHalt();
 	TWEEN.removeAll();
 	for ( var i = 0; i < objects.length; i ++ ) {
 		var object = objects[ i ];

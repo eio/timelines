@@ -6,8 +6,7 @@ import { TrackballControls } from './lib/jsm/TrackballControls.js';
 import { OrbitControls } from './lib/jsm/OrbitControls.js';
 import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 
-import { DataTable } from './data.js';
-var table = DataTable;
+import { EVENTS } from '../data/events.js';
 
 var MIN_CONTROLS_DISTANCE = 0;
 var MAX_CONTROLS_DISTANCE = 12300;
@@ -25,7 +24,9 @@ function init() {
 	// scene
 	scene = new THREE.Scene();
 	// initialize event objects and table view
-	for ( var i = 0; i < table.length; i += 5 ) {
+	for ( var i = 0; i < EVENTS.length; i ++ ) {
+
+		var event = EVENTS[i];
 
 		var element = document.createElement( 'div' );
 		element.className = 'element';
@@ -40,14 +41,14 @@ function init() {
 
 		var year = document.createElement( 'div' );
 		year.className = 'year';
-		year.textContent = table[ i ];
+		year.textContent = event['date']; // date
 		element.appendChild( year );
 
 		var details = document.createElement( 'div' );
 		details.className = 'details';
 		// var tab = '&nbsp;&nbsp;&nbsp;&nbsp;';
-		var dtext = table[ i + 1 ];
-		details.innerHTML = dtext + '<br><img src="' + table[ i + 2 ] + '" />';
+		var dtext = event['description'];
+		details.innerHTML = dtext + '<br><img src="' + event['imgsrc'] + '" />';
 		element.appendChild( details );
 
 		var object = new CSS3DObject( element );
@@ -64,7 +65,7 @@ function init() {
 		var object = new THREE.Object3D();
 		var xmargin = 280;
 		var xoffset = 1800;
-		var xpos = ( table[ i + 3 ] * xmargin ) - xoffset;
+		var xpos = ( event['order'] * xmargin ) - xoffset;
 		var ypos = 300;
 		// var ypos = - ( table[ i + 4 ] * 180 ) + 990;
 		object.position.x = xpos * 3;

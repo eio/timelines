@@ -131,7 +131,7 @@ a, button, input, select {
 }
 
 #dashboard.mobile {
-	transform: scale(1);
+	transform: scale(0.9) translate(45px,80px);
 }
 
 #dashboard {

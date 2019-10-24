@@ -1,8 +1,9 @@
 body {
+	/*font-family: Monospace;*/
+	font-family: Helvetica, sans-serif;
 	margin: 0;
 	background-color: #000;
 	color: #fff;
-	font-family: Monospace;
 	font-size: 13px;
 	line-height: 24px;
 	overscroll-behavior: none;
@@ -65,7 +66,6 @@ body {
 	height: 800px;
 	box-shadow: 0px 0px 12px rgba(80,200,255,0.5);
 	border: 1px solid rgba(80,160,208,0.25);
-	font-family: Helvetica, sans-serif;
 	text-align: center;
 	line-height: normal;
 -webkit-touch-callout: none; /* iOS Safari */
@@ -130,79 +130,134 @@ a, button, input, select {
 	pointer-events: auto;
 }
 
+#dashboard.mobile {
+	transform: scale(0.8);
+}
+
+#dashboard {
+	transform: rotate(-2deg);
+	position: absolute;
+	border: 4px solid rgba(20,20,20,0.5);
+	box-shadow: inset 0 0 10px 4px rgba(10,10,10,0.8);
+	bottom: 1%;
+	right: 1%;
+	width: 21em;
+	height: 21em;
+	border-radius: 50%;
+	background: #283446; /* Fallback */
+	background: linear-gradient(#36455b, #283446);
+/*	-webkit-transition: all .5s ease;
+	transition: all .5s ease;*/
+}
+
 button {
+	border-radius: 1px;
 	text-transform: uppercase;
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-	color: rgba(80,120,220,0.75);
-	background: transparent;
-	outline: 1px solid rgba(80,120,220,0.75);
-	border: 0px;
-	padding: 5px 10px;
 	cursor: pointer;
+	background: #283446; /* Fallback */
+	background: linear-gradient(#36455b, #283446);
+	color: rgba(220,220,220,0.75);
+	border: 1px solid rgba(20,20,20,0.5);
+	margin: 5px;
+	outline: none;
 }
 
-button:hover,
-#datatypes div:hover {
-	box-shadow: 0px 0px 12px rgba(80,200,255,0.8);
-	outline: 1px solid rgba(80,140,255,0.8);
+/*#datatypes .datatype:hover,*/
+button:hover {
+	box-shadow: 0px 0px 5px rgba(80,180,255,0.6);
+	border: 1px solid rgba(20,20,20,0.8);
+	color: rgba(220,220,220,0.9);
 }
 
-button:active,
-#datatypes div:active {
+/*#datatypes .datatype:active,*/
+button:active {
 	color: #FFFFFF;
-	background-color: rgba(40,80,240,0.5);
-}
-
-#buttons {
-	margin-bottom: 50px;
+	box-shadow: 0px 0px 5px rgba(80,180,255,1);
+	border: 1px solid rgba(20,20,20,1);
 }
 
 #buttons, #datatypes {
 	position: absolute;
-	/*bottom: 20px;*/
 	width: 100%;
 	text-align: center;
 }
 
-#dashboard {
+#buttons {
+	top: 0%;
+}
+
+#line {
+	transform: translate(0px,60px) rotate(-50deg);
+}
+#sphere {
+	transform: translate(-5px,20px) rotate(-15deg);
+}
+#helix {
+	transform: translate(5px,20px) rotate(15deg);
+}
+#grid {
+	transform: translate(0px,60px) rotate(50deg);
+}
+
+#svg-dash {
+	/*visibility: hidden;*/
+	overflow: visible;
 	position: absolute;
-	bottom: -10%;
-	left: -50%;
-	width: 200%;
-	height: 30%;
-	border-radius: 50%;
-	/*background: rgba(0,40,120,0.4);*/
-	/*box-shadow: 0px 0px 12px rgba(80,200,255,0.4);*/
-	/*border: 1px solid rgba(80,140,255,0.4);*/
-	font-family: Helvetica, sans-serif;
-	background: #283446; /* Fallback */
-	background: linear-gradient(#36455b, #283446);
-	/*box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),  0 0 8px rgba(0,0,0,0.3),  0 12px 12px rgba(0,0,0,0.4);*/
-	-webkit-transition: all .5s ease;
-	transition: all .5s ease;
+	margin-left: -63px;
+	margin-top: 10px;
 }
 
 #datatypes {
-	top: 20%;
+	bottom: 20%;
 }
 
-#datatypes div {
+#datatypes .datatype {
 	display: inline-block;
-	width: 100px;
+	font-size: 60%;
+	cursor: pointer;
 	text-transform: uppercase;
 	box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-	color: rgba(80,120,220,0.75);
+/*	color: rgba(80,120,220,0.75);
 	background: transparent;
-	outline: 1px solid rgba(80,120,220,0.75);
-	border: 0px;
-	padding: 5px 10px;
-	margin: 1px;
-	cursor: pointer;
+	outline: 1px solid rgba(80,120,220,0.15);
+	border: 0px;*/
+	/*background: #283446; /* Fallback */
+	/*background: linear-gradient(#36455b, #283446);*/
+	color: rgba(220,220,220,0.6);
+	/*outline: 1px solid rgba(20,20,20,0.3);*/
+	padding: 2px;
+	width: 28px;
 }
+
+/*#adsb-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#ais-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#gnssro-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#ism-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#mag-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#tec-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}*/
 
 #menu_icon {
 	cursor: pointer;
@@ -254,7 +309,6 @@ button:active,
 	background: rgba(0,40,120,0.4);
 	box-shadow: 0px 0px 12px rgba(80,200,255,0.4);
 	border: 1px solid rgba(80,140,255,0.4);
-	font-family: Helvetica, sans-serif;
 	text-align: center;
 	line-height: normal;
 	/* disable text select */

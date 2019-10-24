@@ -16,54 +16,110 @@
 -->
 		<div id="container"></div>
 		<div id="dashboard">
-			<div id="switches">
-				<div class="switch">
-				  <input type="checkbox" name="toggle">
-				  <label for="toggle"><i></i></label>
-				  <span></span>
-				</div>
-				<div class="switch">
-				  <input type="checkbox" name="toggle">
-				  <label for="toggle"><i></i></label>
-				  <span></span>
-				</div>
-				<div class="switch">
-				  <input type="checkbox" name="toggle">
-				  <label for="toggle"><i></i></label>
-				  <span></span>
-				</div>
-				<div class="switch">
-				  <input type="checkbox" name="toggle">
-				  <label for="toggle"><i></i></label>
-				  <span></span>
-				</div>
-				<div class="switch">
-				  <input type="checkbox" name="toggle">
-				  <label for="toggle"><i></i></label>
-				  <span></span>
-				</div>
-				<div class="switch">
-				  <input type="checkbox" name="toggle">
-				  <label for="toggle"><i></i></label>
-				  <span></span>
-				</div>
-			</div>
-			<div id="datatypes">
-				<div id="ads-b">ADS-B</div> <!-- automatic dependent surveillance broadcast -->
-				<div id="ais">AIS</div> <!-- automatic identification system -->
-				<div id="gnss-ro">GNSS-RO</div> <!-- radio occultation -->
-				<div id="ism">ISM</div> <!-- ionospheric scintillation indices (i.s.monitor) -->
-				<div id="mag">MAG</div> <!-- magnetometer data -->
-				<div id="tec">TEC</div>  <!-- total electron content -->
-			</div>
+			<svg id="svg-dash" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			    <defs>
+			        <path id="text_0a_path" d="M 100 150 A 101 100 0 1 1 300 150"/>
+			        <path id="text_0b_path" d="M 100 135 A 100 100 0 1 1 300 150"/>
+			        <path id="text_0c_path" d="M 100 150 A 100 100 0 1 1 300 150"/>
+			        <path id="text_0d_path" d="M 100 150 A 100 90 0 1 1 300 150"/>
+			        <path id="text_0e_path" d="M 100 150 A 100 80 0 1 1 300 150"/>
+			        <path id="text_0f_path" d="M 100 150 A 100 70 0 1 1 300 150"/>
+			        <path id="text_0g_path" d="M 100 150 A 100 60 0 1 1 300 150"/>
+			        <path id="text_0h_path" d="M 100 150 A 100 50 0 1 1 300 150"/>
+			        <path id="text_0i_path" d="M 100 150 A 100 40 0 1 1 300 150"/>
+			        <path id="text_0j_path" d="M 100 150 A 100 30 0 1 1 300 150"/>
+			        <path id="text_0k_path" d="M 100 150 A 100 20 0 1 1 300 150"/>
+			        <path id="text_0l_path" d="M 100 150 A 100 10 0 1 1 300 150"/>
+			        <path id="text_0m_path" d="M 100 150 A 100  0 0 1 1 300 150"/>
+			    </defs>
+			    <use xlink:href="#text_0a_path" stroke="#283446" stroke-width="2.5" fill="none" fill-opacity="0.9"/>
+			    <use xlink:href="#text_0b_path" stroke="#283446" stroke-width="1.5" fill="none" fill-opacity="0.7"/>
+			    <use xlink:href="#text_0c_path" stroke="#283446" stroke-width="1.0" fill="none" fill-opacity="0.5"/>
+			    <use xlink:href="#text_0d_path" stroke="#283446" stroke-width="1.0" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0e_path" stroke="#283446" stroke-width="0.5" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0f_path" stroke="#283446" stroke-width="0.5" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0g_path" stroke="#283446" stroke-width="0.5" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0h_path" stroke="#283446" stroke-width="0.4" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0i_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0j_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0k_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0l_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+			    <use xlink:href="#text_0m_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+			    <!-- <use xlink:href="#text_0b_path" stroke="rgb(185,231,253)" stroke-width="1" fill-opacity="0.75"/> -->
+			    <g font-family="Helvetica" fill="rgb(80,120,220)" font-size="12px" fill-opacity="0.75">
+			        <text text-anchor="middle">
+			            <textPath xlink:href="#text_0_path" startOffset="20%">LINE</textPath>
+			            <textPath xlink:href="#text_0_path" startOffset="40%">SPHERE</textPath>
+			            <textPath xlink:href="#text_0_path" startOffset="60%">HELIX</textPath>
+			            <textPath xlink:href="#text_0_path" startOffset="80%">GRID</textPath>
+			        </text>
+			    </g>
+			</svg>
 			<div id="buttons">
-				<button id="table">LINE</button>
+				<button id="line">LINE</button>
 				<button id="sphere">SPHERE</button>
 				<button id="helix">HELIX</button>
 				<button id="grid">GRID</button>
 			</div>
+			<div id="datatypes">
+				<!---->
+				<!-- ADS-B -->
+				<!---->
+				<div class="switch">
+				  <input type="checkbox" name="adsb-toggle" id="adsb-switch">
+				  <label for="toggle"><i></i></label>
+				  <span></span>
+				</div>
+				<div id="ads-b" class="datatype" name="automatic dependent surveillance broadcast">ADS-B</div>
+				<!---->
+				<!-- AIS -->
+				<!---->
+				<div class="switch">
+				  <input type="checkbox" name="ais-toggle" id="ais-switch">
+				  <label for="toggle"><i></i></label>
+				  <span></span>
+				</div>
+				<div id="ais" class="datatype" name="automatic identification system">AIS</div>
+				<!---->
+				<!-- GNSS-RO -->
+				<!---->
+				<div class="switch">
+				  <input type="checkbox" name="gnssro-toggle" id="gnssro-switch">
+				  <label for="toggle"><i></i></label>
+				  <span></span>
+				</div>
+				<div id="gnss-ro" class="datatype" name="radio occultation">RO</div>
+				<!---->
+				<!-- ISM -->
+				<!---->
+				<div class="switch">
+				  <input type="checkbox" name="ism-toggle" id="ism-switch">
+				  <label for="toggle"><i></i></label>
+				  <span></span>
+				</div>
+				<div id="ism" class="datatype" name="ionospheric scintillation indices (i.s.monitor)">ISM</div>
+				<!---->
+				<!-- MAG -->
+				<!---->
+				<div class="switch">
+				  <input type="checkbox" name="mag-toggle" id="mag-switch">
+				  <label for="toggle"><i></i></label>
+				  <span></span>
+				</div>
+				<div id="mag" class="datatype" name="magnetometer data">MAG</div>
+				<!---->
+				<!-- TEC -->
+				<!---->
+				<div class="switch">
+				  <input type="checkbox" name="tec-toggle" id="tec-switch">
+				  <label for="toggle"><i></i></label>
+				  <span></span>
+				</div>
+				<div id="tec" class="datatype" name="total electron content">TEC</div>
+			</div>
 		</div>
 		<!-- <script src="js/menu.js"></script> -->
+		<script type="module" src="js/check-support.js"></script>
 		<script type="module" src="js/visuals.js"></script>
 		<script type="module" src="js/run.js"></script>
 	</body>

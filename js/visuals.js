@@ -1,4 +1,4 @@
-export { init, animate };
+export { init, animate, targets, transform, onWindowResize };
 
 import * as THREE from './lib/three.module.js';
 import { TWEEN } from './lib/jsm/tween.module.min.js';
@@ -143,31 +143,6 @@ function init() {
 	controls.minDistance = MIN_CONTROLS_DISTANCE;
 	controls.maxDistance = MAX_CONTROLS_DISTANCE;
 	controls.addEventListener( 'change', render );
-
-	var button = document.getElementById( 'table' );
-	button.addEventListener( 'click', function () {
-		transform( targets.table, 2000 );
-	}, false );
-
-	var button = document.getElementById( 'sphere' );
-	button.addEventListener( 'click', function () {
-		transform( targets.sphere, 2000 );
-	}, false );
-
-	var button = document.getElementById( 'helix' );
-	button.addEventListener( 'click', function () {
-		transform( targets.helix, 2000 );
-	}, false );
-
-	var button = document.getElementById( 'grid' );
-	button.addEventListener( 'click', function () {
-		transform( targets.grid, 2000 );
-	}, false );
-
-	// set initial state
-	transform( targets.helix, 2000 );
-	// handle window resize
-	window.addEventListener( 'resize', onWindowResize, false );
 }
 
 // this is the bit that makes every event seize up

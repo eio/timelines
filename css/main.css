@@ -131,7 +131,7 @@ a, button, input, select {
 }
 
 #dashboard.mobile {
-	transform: scale(0.8);
+	transform: scale(1);
 }
 
 #dashboard {
@@ -151,6 +151,7 @@ a, button, input, select {
 }
 
 button {
+	font-family: Helvetica;
 	border-radius: 1px;
 	text-transform: uppercase;
 	box-sizing: border-box;
@@ -163,6 +164,7 @@ button {
 	border: 1px solid rgba(20,20,20,0.5);
 	margin: 5px;
 	outline: none;
+	font-size: 95%;
 }
 
 /*#datatypes .datatype:hover,*/
@@ -190,7 +192,7 @@ button:active {
 }
 
 #line {
-	transform: translate(0px,60px) rotate(-50deg);
+	transform: translate(5px,60px) rotate(-55deg);
 }
 #sphere {
 	transform: translate(-5px,20px) rotate(-15deg);
@@ -199,7 +201,7 @@ button:active {
 	transform: translate(5px,20px) rotate(15deg);
 }
 #grid {
-	transform: translate(0px,60px) rotate(50deg);
+	transform: translate(-5px,60px) rotate(55deg);
 }
 
 #svg-dash {

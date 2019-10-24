@@ -16,14 +16,21 @@
   cursor: pointer;
 }
 
+#switches {
+/*  position: absolute;
+  bottom: 50px;
+  right: 20px;*/
+  transform: scale(0.5);
+  z-index: 100;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .switch {
   transform: rotate(-90deg);
-  position: absolute;
-  top: 100px;
-  right: 10px;
   width: 180px;
   height: 55px;
-  z-index: 100;
+  display: inline-block;
 }
 
 .switch label {

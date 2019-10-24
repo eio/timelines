@@ -6,6 +6,7 @@ body {
 	font-size: 13px;
 	line-height: 24px;
 	overscroll-behavior: none;
+	overflow: hidden;
 	-webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -30,19 +31,6 @@ body {
 	display: block;
 }*/
 
-/*#dashboard {
-	position: absolute;
-	bottom: -10%;
-	left: -50%;
-	width: 200%;
-	height: 30%;
-	border-radius: 50%;
-	background: rgba(0,40,120,0.4);
-	box-shadow: 0px 0px 12px rgba(80,200,255,0.4);
-	border: 1px solid rgba(80,140,255,0.4);
-	font-family: Helvetica, sans-serif;
-}
-*/
 
 /*#info {
 	position: absolute;
@@ -173,9 +161,31 @@ button:active,
 
 #buttons, #datatypes {
 	position: absolute;
-	bottom: 20px;
+	/*bottom: 20px;*/
 	width: 100%;
 	text-align: center;
+}
+
+#dashboard {
+	position: absolute;
+	bottom: -10%;
+	left: -50%;
+	width: 200%;
+	height: 30%;
+	border-radius: 50%;
+	/*background: rgba(0,40,120,0.4);*/
+	/*box-shadow: 0px 0px 12px rgba(80,200,255,0.4);*/
+	/*border: 1px solid rgba(80,140,255,0.4);*/
+	font-family: Helvetica, sans-serif;
+	background: #283446; /* Fallback */
+	background: linear-gradient(#36455b, #283446);
+	/*box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),  0 0 8px rgba(0,0,0,0.3),  0 12px 12px rgba(0,0,0,0.4);*/
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
+}
+
+#datatypes {
+	top: 20%;
 }
 
 #datatypes div {

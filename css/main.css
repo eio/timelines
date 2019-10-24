@@ -135,7 +135,8 @@ a, button, input, select {
 }
 
 #dashboard {
-	transform: rotate(-2deg);
+	/*transform: rotate(-2deg);*/
+	transform: rotate(-2deg) translate(0px,50px);
 	position: absolute;
 	border: 4px solid rgba(20,20,20,0.5);
 	box-shadow: inset 0 0 10px 4px rgba(10,10,10,0.8);

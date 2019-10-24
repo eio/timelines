@@ -210,7 +210,7 @@ button:active {
 	/*visibility: hidden;*/
 	overflow: visible;
 	position: absolute;
-	margin-left: -63px;
+	margin-left: -64px;
 	margin-top: 10px;
 }
 
@@ -235,7 +235,7 @@ button:active {
 	color: rgba(220,220,220,0.6);
 	/*outline: 1px solid rgba(20,20,20,0.3);*/
 	padding: 2px;
-	width: 28px;
+	width: 30px;
 }
 
 /*#adsb-switch {

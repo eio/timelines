@@ -8,6 +8,8 @@ import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 
 import { EVENTS } from '../data/events.js';
 
+// var ELEMENT_ALPHA = ( Math.random() * 0.5 + 0.25 );
+var ELEMENT_ALPHA = 0.7;
 var MIN_CONTROLS_DISTANCE = 0;
 var MAX_CONTROLS_DISTANCE = 12300;
 var INIT_CAMERA_Z = 8000;
@@ -30,9 +32,7 @@ function init() {
 
 		var element = document.createElement( 'div' );
 		element.className = 'element';
-		// var alpha = ( Math.random() * 0.5 + 0.25 );
-		var alpha = 0.4;
-		element.style.backgroundColor = 'rgba(0,40,120,' + alpha + ')';
+		element.style.backgroundColor = 'rgba(0,40,120,' + ELEMENT_ALPHA + ')';
 
 		var number = document.createElement( 'div' );
 		number.className = 'number';

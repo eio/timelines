@@ -1,0 +1,135 @@
+/*TODO: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+
+#widget.mobile {
+	transform: scale(0.9) translate(45px,80px);
+}
+
+#widget {
+	overflow: hidden;
+	/*transform: rotate(-2deg);*/
+	transform: rotate(-2deg) translate(0px,50px);
+	position: absolute;
+	border: 4px solid rgba(20,20,20,0.5);
+	box-shadow: inset 0 0 10px 4px rgba(10,10,10,0.8);
+	bottom: 1%;
+	right: 1%;
+	width: 21em;
+	height: 21em;
+	border-radius: 50%;
+	background: #283446; /* Fallback */
+	background: linear-gradient(#36455b, #283446);
+/*	-webkit-transition: all .5s ease;
+	transition: all .5s ease;*/
+}
+
+button {
+	font-family: Helvetica;
+	border-radius: 1px;
+	text-transform: uppercase;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	cursor: pointer;
+	background: #283446; /* Fallback */
+	background: linear-gradient(#36455b, #283446);
+	color: rgba(220,220,220,0.75);
+	border: 1px solid rgba(20,20,20,0.5);
+	margin: 5px;
+	outline: none;
+	font-size: 95%;
+}
+
+/*#datatypes .datatype:hover,*/
+button:hover {
+	box-shadow: 0px 0px 5px rgba(80,180,255,0.6);
+	border: 1px solid rgba(20,20,20,0.8);
+	color: rgba(220,220,220,0.9);
+}
+
+/*#datatypes .datatype:active,*/
+button:active {
+	color: #FFFFFF;
+	box-shadow: 0px 0px 5px rgba(80,180,255,1);
+	border: 1px solid rgba(20,20,20,1);
+}
+
+#buttons, #datatypes {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+}
+
+#buttons {
+	top: 0%;
+}
+
+#line {
+	transform: translate(5px,60px) rotate(-55deg);
+}
+#sphere {
+	transform: translate(-5px,20px) rotate(-15deg);
+}
+#helix {
+	transform: translate(5px,20px) rotate(15deg);
+}
+#grid {
+	transform: translate(-5px,60px) rotate(55deg);
+}
+
+#svg-dash {
+	/*visibility: hidden;*/
+	overflow: visible;
+	position: absolute;
+	margin-left: -64px;
+	margin-top: 10px;
+}
+
+#datatypes {
+	bottom: 20%;
+}
+
+#datatypes .datatype {
+	display: inline-block;
+	font-size: 60%;
+	cursor: pointer;
+	text-transform: uppercase;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+/*	color: rgba(80,120,220,0.75);
+	background: transparent;
+	outline: 1px solid rgba(80,120,220,0.15);
+	border: 0px;*/
+	/*background: #283446; /* Fallback */
+	/*background: linear-gradient(#36455b, #283446);*/
+	color: rgba(220,220,220,0.6);
+	/*outline: 1px solid rgba(20,20,20,0.3);*/
+	padding: 2px;
+	width: 30px;
+}
+
+/*#adsb-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#ais-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#gnssro-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#ism-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#mag-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}
+#tec-switch {
+	margin-top: -70px;
+	margin-left: -135px;
+}

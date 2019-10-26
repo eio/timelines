@@ -1,0 +1,111 @@
+/*canvas {
+	display: block;
+}*/
+
+/*#info {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1;
+}
+*/
+
+.dg.ac {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	z-index: 2 !important; /* TODO Solve this in HTML */
+}
+
+a {
+	color: #8ff;
+	/*color: #ff0;*/
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a, button, input, select {
+	pointer-events: auto;
+}
+
+#menu_icon {
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 40px;
+	width: 40px;
+	font-size: 30px;
+	text-align: center;
+	border-radius: 50%;
+	/*border: 2px solid rgba(80,120,220,0.75);*/
+	color: rgba(80,120,220,0.75);
+	z-index: 10;
+}
+
+#menu_icon:hover {
+	color: rgba(100,140,240,0.85);
+	/*background-color: rgba(40,80,200,0.5);*/
+}
+
+#menu_icon:active {
+	color: rgba(255,255,255,1.0);
+	transform: rotate(90deg);
+	/*background-color: rgba(40,80,240,0.5);*/
+}
+
+#menu_icon.open {
+	transform: rotate(90deg);
+}
+
+#menu_icon div {
+	margin-top: 15%;
+	margin-left: 15%;
+	width: 30px;
+	height: 30px;
+}
+
+#menu {
+	cursor: pointer;
+	visibility: hidden;
+	position: absolute;
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	cursor: pointer;
+	left: -2px;
+	height: 101%;
+	background: rgba(0,40,120,0.4);
+	box-shadow: 0px 0px 12px rgba(80,200,255,0.4);
+	border: 1px solid rgba(80,140,255,0.4);
+	text-align: center;
+	line-height: normal;
+	/* disable text select */
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+-khtml-user-select: none; /* Konqueror HTML */
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+-webkit-transition: width 4s; /* Safari prior 6.1 */
+  	transition: width 4s;
+}
+
+#menu.open {
+	visibility: visible;
+	width: 40%;
+	-webkit-transition: width 4s; /* Safari prior 6.1 */
+  	transition: width 4s;
+}

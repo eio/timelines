@@ -20,6 +20,7 @@ var objects = [];
 var targets = { table: [], sphere: [], helix: [], grid: [] };
 
 function init() {
+	document.getElementById('widget').style.visibility = 'visible';
 	// camera
 	camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
 	camera.position.z = INIT_CAMERA_Z;

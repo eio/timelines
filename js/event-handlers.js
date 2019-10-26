@@ -25,41 +25,50 @@ button.addEventListener( 'click', function () {
 
 // handle switch toggle text clicks
 var text = document.getElementById( 'ads-b' );
-text.addEventListener( 'click', function () {
+var handler = function (e) {
+	e.preventDefault();
 	var elem = document.getElementById('adsb-switch');
 	elem.checked = !elem.checked;
-}, false );
+};
+text.addEventListener( 'click', handler, false );
+text.addEventListener( 'touchstart', handler, false );
 var text = document.getElementById( 'ais' );
-text.addEventListener( 'click', function () {
+var handler = function (e) {
+	e.preventDefault();
 	var elem = document.getElementById('ais-switch');
 	elem.checked = !elem.checked;
-}, false );
+};
+text.addEventListener( 'click', handler, false );
+text.addEventListener( 'touchstart', handler, false );
 var text = document.getElementById( 'gnss-ro' );
-text.addEventListener( 'click', function () {
+var handler = function (e) {
+	e.preventDefault();
 	var elem = document.getElementById('gnssro-switch');
 	elem.checked = !elem.checked;
-}, false );
+};
+text.addEventListener( 'click', handler, false );
+text.addEventListener( 'touchstart', handler, false );
 var text = document.getElementById( 'ism' );
-text.addEventListener( 'click', function () {
+var handler = function (e) {
+	e.preventDefault();
 	var elem = document.getElementById('ism');
 	elem.checked = !elem.checked;
-}, false );
+};
+text.addEventListener( 'click', handler, false );
+text.addEventListener( 'touchstart', handler, false );
 var text = document.getElementById( 'mag' );
-text.addEventListener( 'click', function () {
+var handler = function (e) {
+	e.preventDefault();
 	var elem = document.getElementById('mag');
 	elem.checked = !elem.checked;
-}, false );
+};
+text.addEventListener( 'click', handler, false );
+text.addEventListener( 'touchstart', handler, false );
 var text = document.getElementById( 'tec' );
-text.addEventListener( 'click', function () {
+var handler = function (e) {
+	e.preventDefault();
 	var elem = document.getElementById('tec-switch');
 	elem.checked = !elem.checked;
-}, false );
-
-// TODO - touch support
-
-// function handleInteraction(evt) {
-//   evt.preventDefault()
-//   console.log('interacted')
-// }
-// el.addEventListener('touchstart', handleInteraction)
-// el.addEventListener('click', handleInteraction)
+};
+text.addEventListener( 'click', handler, false );
+text.addEventListener( 'touchstart', handler, false );

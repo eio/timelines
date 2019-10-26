@@ -11,27 +11,36 @@ function dragElement(elmnt) {
   // } else {
   // // otherwise, move the DIV from anywhere inside the DIV:
   elmnt.onmousedown = dragMouseDown;
+  elmnt.ontouchstart = dragMouseDown;
   // }
 
   function dragMouseDown(e) {
     e = e || window.event;
-    e.preventDefault();
+    // e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
+    document.body.onmouseup = closeDragElement;
+    document.body.ontouchend = closeDragElement;
     // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
+    document.body.onmousemove = elementDrag;
+    document.body.ontouchmove = elementDrag;
   }
 
   function elementDrag(e) {
     e = e || window.event;
-    e.preventDefault();
+    // e.preventDefault();
     // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
+    var clientX = e.clientX;
+    var clientY = e.clientY;
+    if (clientX == undefined && clientY == undefined) {
+      clientX = e.touches[0].clientX;
+      clientY = e.touches[0].clientY;
+    }
+    pos1 = pos3 - clientX;
+    pos2 = pos4 - clientY;
+    pos3 = clientX;
+    pos4 = clientY;
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
@@ -39,7 +48,9 @@ function dragElement(elmnt) {
 
   function closeDragElement() {
     // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
+    document.body.onmouseup = null;
+    document.body.onmousemove = null;
+    document.body.ontouchend = null;
+    document.body.ontouchmove = null;
   }
 }

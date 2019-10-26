@@ -5,13 +5,15 @@
 }
 
 #widget {
+	/* made visible in visuals.js/init() */
+	visibility: hidden;
 	overflow: hidden;
 	/*transform: rotate(-2deg);*/
 	transform: rotate(-2deg) translate(0px,50px);
 	position: absolute;
 	border: 4px solid rgba(20,20,20,0.5);
 	box-shadow: inset 0 0 10px 4px rgba(10,10,10,0.8);
-	bottom: 1%;
+	bottom: 2%;
 	right: 1%;
 	width: 21em;
 	height: 21em;
@@ -34,7 +36,7 @@ button {
 	background: linear-gradient(#36455b, #283446);
 	color: rgba(220,220,220,0.75);
 	border: 1px solid rgba(20,20,20,0.5);
-	margin: 5px;
+	margin: 0.4em;
 	outline: none;
 	font-size: 95%;
 }
@@ -55,13 +57,14 @@ button:active {
 
 #buttons, #datatypes {
 	position: absolute;
-	width: 100%;
+	width: 99%;
 	text-align: center;
 	display: inline-block;
 }
 
 #buttons {
 	top: 0%;
+	left: 0.5%;
 }
 
 #line {

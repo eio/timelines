@@ -4,7 +4,7 @@ window.mobilecheck = function() {
 	return check;
 };
 if (window.mobilecheck() == true) {
-	document.getElementById('dashboard').className = 'mobile';
+	document.getElementById('widget').className = 'mobile';
 }
 // if ( ! Detector.webgl ) {
 // 	Detector.addGetWebGLMessage();

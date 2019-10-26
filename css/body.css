@@ -1,3 +1,8 @@
+html {
+  overflow: hidden;
+  position: relative;
+}
+
 body {
 	overflow: hidden;
 	position: relative;

@@ -25,6 +25,7 @@
 }
 
 button {
+	font-size: 90%;
 	font-family: Helvetica;
 	border-radius: 1px;
 	text-transform: uppercase;
@@ -38,7 +39,6 @@ button {
 	border: 1px solid rgba(20,20,20,0.5);
 	margin: 0.4em;
 	outline: none;
-	font-size: 95%;
 }
 
 /*#datatypes .datatype:hover,*/

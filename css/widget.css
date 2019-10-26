@@ -55,16 +55,17 @@ button:active {
 	border: 1px solid rgba(20,20,20,1);
 }
 
-#buttons, #datatypes {
+#transformations, #datatypes {
 	position: absolute;
-	width: 99%;
+	width: 100%;
 	text-align: center;
 	display: inline-block;
 }
 
-#buttons {
+#transformations {
 	top: 0%;
-	left: 0.5%;
+	left: 2.5%;
+	width: 20em;
 }
 
 #line {

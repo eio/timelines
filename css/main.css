@@ -1,3 +1,5 @@
+/* TODO: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+
 body {
 	overflow: hidden;
 	position: relative;
@@ -132,11 +134,11 @@ a, button, input, select {
 	pointer-events: auto;
 }
 
-#dashboard.mobile {
+#widget.mobile {
 	transform: scale(0.9) translate(45px,80px);
 }
 
-#dashboard {
+#widget {
 	overflow: hidden;
 	/*transform: rotate(-2deg);*/
 	transform: rotate(-2deg) translate(0px,50px);

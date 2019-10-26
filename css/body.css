@@ -1,11 +1,11 @@
 html {
   overflow: hidden;
-  position: relative;
+  position: fixed;
 }
 
 body {
 	overflow: hidden;
-	position: relative;
+	position: fixed;
 	/*font-family: Monospace;*/
 	font-family: Helvetica, sans-serif;
 	margin: 0;

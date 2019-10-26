@@ -23,6 +23,11 @@ body {
                                   supported by Chrome and Opera */
 }
 
+#container {
+  overflow: hidden;
+  position: relative;
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

@@ -15,6 +15,7 @@ var MAX_CONTROLS_DISTANCE = 12300;
 var INIT_CAMERA_Z = 8000;
 var camera, scene, renderer;
 var controls;
+var ORBIT = false;
 
 var objects = [];
 var targets = { table: [], sphere: [], helix: [], grid: [] };
@@ -139,8 +140,11 @@ function init() {
 
 	//
 
-	controls = new TrackballControls( camera, renderer.domElement );
-	// controls = new OrbitControls( camera, renderer.domElement );
+	if (ORBIT == true) {
+		controls = new OrbitControls( camera, renderer.domElement );
+	} else {
+		controls = new TrackballControls( camera, renderer.domElement );
+	}
 	controls.minDistance = MIN_CONTROLS_DISTANCE;
 	controls.maxDistance = MAX_CONTROLS_DISTANCE;
 	controls.addEventListener( 'change', render );

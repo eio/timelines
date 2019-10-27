@@ -6,7 +6,7 @@ window.addEventListener( 'resize', onWindowResize, false );
 // handle button press
 var button = document.getElementById( 'line' );
 button.addEventListener( 'click', function () {
-	transform( targets.table, 2000 );
+	transform( targets.line, 2000 );
 }, false );
 var button = document.getElementById( 'sphere' );
 button.addEventListener( 'click', function () {

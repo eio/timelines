@@ -18,6 +18,8 @@ Try it out here: https://eio.github.io/gnss-ro-timeline/
 - https://en.wikipedia.org/wiki/Global_Positioning_System
 - https://www.ion.org/museum/item_view.cfm?cid=7&scid=9&iid=22
 - https://www.cosmic.ucar.edu/
+- https://spacenews.com/spire-forecast/
+- https://weather.spire.com/
 
 ## Running Locally ##
 

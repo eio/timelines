@@ -6,7 +6,12 @@ import { TrackballControls } from './lib/jsm/TrackballControls.js';
 import { OrbitControls } from './lib/jsm/OrbitControls.js';
 import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 
-import { EVENTS } from '../data/events.js';
+// import { ADSB_EVENTS } from '../data/json/ads-b.js';
+// import { AIS_EVENTS } from '../data/json/ais.js';
+import { EVENTS } from '../data/json/gnss-ro.js';
+// import { ISM_EVENTS } from '../data/json/ism.js';
+// import { MAG_EVENTS } from '../data/json/mag.js';
+// import { TEC_EVENTS } from '../data/json/tec.js';
 
 // var ELEMENT_ALPHA = ( Math.random() * 0.5 + 0.25 );
 var ELEMENT_ALPHA = 0.7;
@@ -18,7 +23,7 @@ var controls;
 var ORBIT = false;
 
 var objects = [];
-var targets = { table: [], sphere: [], helix: [], grid: [] };
+var targets = { line: [], sphere: [], helix: [], grid: [] };
 
 function init() {
 	document.getElementById('widget').style.visibility = 'visible';
@@ -27,7 +32,7 @@ function init() {
 	camera.position.z = INIT_CAMERA_Z;
 	// scene
 	scene = new THREE.Scene();
-	// initialize event objects and table view
+	// initialize event objects and line view
 	for ( var i = 0; i < EVENTS.length; i ++ ) {
 
 		var event = EVENTS[i];
@@ -62,7 +67,7 @@ function init() {
 
 		objects.push( object );
 
-		// create and capture TABLE view to tween to later
+		// create and capture LINE view to tween to later
 
 		var object = new THREE.Object3D();
 		var xmargin = 280;
@@ -72,7 +77,7 @@ function init() {
 		// var ypos = - ( table[ i + 4 ] * 180 ) + 990;
 		object.position.x = xpos * 3;
 		object.position.y = ypos * 3;
-		targets.table.push( object );
+		targets.line.push( object );
 	}
 
 	// create and capture SPHERE view to tween to later
@@ -82,7 +87,7 @@ function init() {
 		var phi = Math.acos( - 1 + ( 2 * i ) / l );
 		var theta = Math.sqrt( l * Math.PI ) * phi;
 		var object = new THREE.Object3D();
-		var size = 1400;
+		var size = 1500;
 		object.position.setFromSphericalCoords( size, phi, theta );
 		vector.copy( object.position ).multiplyScalar( 2 );
 		object.lookAt( vector );

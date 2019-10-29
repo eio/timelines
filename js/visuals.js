@@ -1,4 +1,4 @@
-export { init, animate, targets, transform, onWindowResize };
+export { init, animate, reset, targets, transform, onWindowResize };
 
 import * as THREE from './lib/three.module.js';
 import { TWEEN } from './lib/jsm/tween.module.min.js';
@@ -6,9 +6,9 @@ import { TrackballControls } from './lib/jsm/TrackballControls.js';
 import { OrbitControls } from './lib/jsm/OrbitControls.js';
 import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 
-// import { ADSB_EVENTS } from '../data/json/ads-b.js';
+import { ADSB_EVENTS } from '../data/json/ads-b.js';
 // import { AIS_EVENTS } from '../data/json/ais.js';
-import { EVENTS } from '../data/json/gnss-ro.js';
+import { RO_EVENTS } from '../data/json/gnss-ro.js';
 // import { ISM_EVENTS } from '../data/json/ism.js';
 // import { MAG_EVENTS } from '../data/json/mag.js';
 // import { TEC_EVENTS } from '../data/json/tec.js';
@@ -25,6 +25,31 @@ var ORBIT = false;
 var objects = [];
 var targets = { line: [], sphere: [], helix: [], grid: [] };
 
+function getSelectedEvents() {
+	var switches = document.getElementsByClassName('switch-input');
+	var events = [];
+	for ( var i = 0; i < switches.length; i ++ ) {
+		var sw = switches[i];
+		if (sw.checked == true) {
+			var id = sw.id;
+			if (id.indexOf('adsb') > -1) {
+				events = events.concat(ADSB_EVENTS);
+			} else if (id.indexOf('ais') > -1)  {
+				events = events.concat(AIS_EVENTS);
+			} else if (id.indexOf('gnssro') > -1)  {
+				events = events.concat(RO_EVENTS);
+			} else if (id.indexOf('ism') > -1)  {
+				events = events.concat(ISM_EVENTS);
+			} else if (id.indexOf('mag') > -1)  {
+				events = events.concat(MAG_EVENTS);
+			} else if (id.indexOf('tec') > -1)  {
+				events = events.concat(TEC_EVENTS);
+			}
+		}
+	}
+	return events;
+}
+
 function init() {
 	document.getElementById('widget').style.visibility = 'visible';
 	// camera
@@ -32,10 +57,34 @@ function init() {
 	camera.position.z = INIT_CAMERA_Z;
 	// scene
 	scene = new THREE.Scene();
-	// initialize event objects and line view
-	for ( var i = 0; i < EVENTS.length; i ++ ) {
 
-		var event = EVENTS[i];
+	renderer = new CSS3DRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+	//
+
+	if (ORBIT == true) {
+		controls = new OrbitControls( camera, renderer.domElement );
+	} else {
+		controls = new TrackballControls( camera, renderer.domElement );
+	}
+	controls.minDistance = MIN_CONTROLS_DISTANCE;
+	controls.maxDistance = MAX_CONTROLS_DISTANCE;
+	controls.addEventListener( 'change', render );
+	reset();
+}
+
+function reset() {
+	targets = { line: [], sphere: [], helix: [], grid: [] };
+	camera.position.x = 0;
+	camera.position.y = 0;
+	camera.position.z = INIT_CAMERA_Z;
+	var events = getSelectedEvents();
+	// initialize event objects and line view
+	for ( var i = 0; i < events.length; i ++ ) {
+
+		var event = events[i];
 
 		var element = document.createElement( 'div' );
 		element.className = 'element';
@@ -72,7 +121,9 @@ function init() {
 		var object = new THREE.Object3D();
 		var xmargin = 280;
 		var xoffset = 1800;
-		var xpos = ( event['order'] * xmargin ) - xoffset;
+		// var order = event['order'];
+		var order = i;
+		var xpos = ( order * xmargin ) - xoffset;
 		var ypos = 300;
 		// var ypos = - ( table[ i + 4 ] * 180 ) + 990;
 		object.position.x = xpos * 3;
@@ -119,9 +170,9 @@ function init() {
 		var object = new THREE.Object3D();
 		var offset = 1600;
 		var scalar = 800;
-		object.position.x = ( ( i % 5 ) * scalar ) - offset;
-		object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * scalar ) + offset;
-		object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
+		object.position.x = ( ( i % 3 ) * scalar ) - offset;
+		object.position.y = ( - ( Math.floor( i / 3 ) % 3 ) * scalar ) + offset;
+		object.position.z = ( Math.floor( i / 9 ) ) * 1000 - 2000;
 		targets.grid.push( object );
 	}
 
@@ -138,21 +189,6 @@ function init() {
 	// }
 
 	//
-
-	renderer = new CSS3DRenderer();
-	renderer.setSize( window.innerWidth, window.innerHeight );
-	document.getElementById( 'container' ).appendChild( renderer.domElement );
-
-	//
-
-	if (ORBIT == true) {
-		controls = new OrbitControls( camera, renderer.domElement );
-	} else {
-		controls = new TrackballControls( camera, renderer.domElement );
-	}
-	controls.minDistance = MIN_CONTROLS_DISTANCE;
-	controls.maxDistance = MAX_CONTROLS_DISTANCE;
-	controls.addEventListener( 'change', render );
 }
 
 // this is the bit that makes every event seize up

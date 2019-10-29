@@ -1,4 +1,4 @@
-import { targets, transform, onWindowResize } from './visuals.js';
+import { targets, transform, onWindowResize, reset } from './visuals.js';
 
 // handle window resize
 window.addEventListener( 'resize', onWindowResize, false );
@@ -29,6 +29,7 @@ var handler = function (e) {
 	e.preventDefault();
 	var elem = document.getElementById('adsb-switch');
 	elem.checked = !elem.checked;
+	reset();
 };
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
@@ -37,6 +38,7 @@ var handler = function (e) {
 	e.preventDefault();
 	var elem = document.getElementById('ais-switch');
 	elem.checked = !elem.checked;
+	reset();
 };
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
@@ -45,6 +47,7 @@ var handler = function (e) {
 	e.preventDefault();
 	var elem = document.getElementById('gnssro-switch');
 	elem.checked = !elem.checked;
+	reset();
 };
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
@@ -53,6 +56,7 @@ var handler = function (e) {
 	e.preventDefault();
 	var elem = document.getElementById('ism-switch');
 	elem.checked = !elem.checked;
+	reset();
 };
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
@@ -61,6 +65,7 @@ var handler = function (e) {
 	e.preventDefault();
 	var elem = document.getElementById('mag-switch');
 	elem.checked = !elem.checked;
+	reset();
 };
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
@@ -69,6 +74,7 @@ var handler = function (e) {
 	e.preventDefault();
 	var elem = document.getElementById('tec-switch');
 	elem.checked = !elem.checked;
+	reset();
 };
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );

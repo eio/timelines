@@ -23,6 +23,15 @@ button.addEventListener( 'click', function () {
 
 // var datatypes = ['ads-b', 'ais', 'gnss-ro', 'ism', 'mag', 'tec'];
 
+function allSwitchesOff() {
+	var switches = document.getElementsByClassName('switch');
+	for (var i=0; i<switches.length; i++) {
+		var s = switches[i];
+		var inp = s.getElementsByTagName('input')[0];
+		inp.checked = false;
+	}
+}
+
 // handle switch toggle text clicks
 var text = document.getElementById( 'ads-b' );
 var handler = function (e) {

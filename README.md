@@ -20,6 +20,8 @@ Try it out here: https://eio.github.io/gnss-ro-timeline/
 - https://www.cosmic.ucar.edu/
 - https://spacenews.com/spire-forecast/
 - https://weather.spire.com/
+- http://www.allaboutais.com/index.php/en/aisbasics1/ais-history
+- https://en.wikipedia.org/wiki/Automatic_identification_system
 
 ## Running Locally ##
 

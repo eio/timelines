@@ -21,7 +21,26 @@ button.addEventListener( 'click', function () {
 	transform( targets.grid, 2000 );
 }, false );
 
-// var datatypes = ['ads-b', 'ais', 'gnss-ro', 'ism', 'mag', 'tec'];
+// handle data switch toggles
+// var switches = document.getElementsByClassName('switch-input');
+// for (var i=0; i<switches.length; i++) {
+// 	var s = switches[i];
+// 	s.addEventListener( 'change', function () {
+// 		switchChange(s);
+// 	}, false );
+// }
+
+// function switchChange(elem) {
+// 	console.log("change")
+// 	var switches = document.getElementsByClassName('switch-input');
+// 	for (var i=0; i<switches.length; i++) {
+// 		var s = switches[i];
+// 		if (s.id != elem.id) {
+// 			console.log("uncheck", s)
+// 			s.checked = false;
+// 		}
+// 	}
+// }
 
 // handle switch toggle text clicks
 var text = document.getElementById( 'ads-b' );

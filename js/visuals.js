@@ -38,13 +38,14 @@ function getSelectedEvents() {
 				events = events.concat(AIS_EVENTS);
 			} else if (id.indexOf('gnssro') > -1)  {
 				events = events.concat(RO_EVENTS);
-			} else if (id.indexOf('ism') > -1)  {
-				events = events.concat(ISM_EVENTS);
-			} else if (id.indexOf('mag') > -1)  {
-				events = events.concat(MAG_EVENTS);
-			} else if (id.indexOf('tec') > -1)  {
-				events = events.concat(TEC_EVENTS);
 			}
+			// else if (id.indexOf('ism') > -1)  {
+			// 	events = events.concat(ISM_EVENTS);
+			// } else if (id.indexOf('mag') > -1)  {
+			// 	events = events.concat(MAG_EVENTS);
+			// } else if (id.indexOf('tec') > -1)  {
+			// 	events = events.concat(TEC_EVENTS);
+			// }
 		}
 	}
 	return events;

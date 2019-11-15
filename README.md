@@ -22,6 +22,7 @@ Try it out here: https://eio.github.io/gnss-ro-timeline/
 - https://weather.spire.com/
 - http://www.allaboutais.com/index.php/en/aisbasics1/ais-history
 - https://en.wikipedia.org/wiki/Automatic_identification_system
+- https://www.forbes.com/sites/elizabethhowell1/2019/07/10/luxembourg-data-lake-will-generate-fresh-space-products-in-weather-and-tracking-spire-global-ceo/#6245445d331b
 - http://adsbforgeneralaviation.com/a-brief-history-of-ads-b/
 - https://en.wikipedia.org/wiki/Traffic_collision_avoidance_system
 - https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast

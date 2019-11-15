@@ -7,7 +7,7 @@ import { OrbitControls } from './lib/jsm/OrbitControls.js';
 import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 
 import { ADSB_EVENTS } from '../data/json/ads-b.js';
-// import { AIS_EVENTS } from '../data/json/ais.js';
+import { AIS_EVENTS } from '../data/json/ais.js';
 import { RO_EVENTS } from '../data/json/gnss-ro.js';
 // import { ISM_EVENTS } from '../data/json/ism.js';
 // import { MAG_EVENTS } from '../data/json/mag.js';
@@ -74,6 +74,15 @@ function init() {
 	controls.addEventListener( 'change', render );
 	reset();
 }
+
+// function allSwitchesOff() {
+// 	var switches = document.getElementsByClassName('switch');
+// 	for (var i=0; i<switches.length; i++) {
+// 		var s = switches[i];
+// 		var inp = s.getElementsByTagName('input')[0];
+// 		inp.checked = false;
+// 	}
+// }
 
 function reset() {
 	targets = { line: [], sphere: [], helix: [], grid: [] };

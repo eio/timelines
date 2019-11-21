@@ -1,4 +1,7 @@
-export { init, animate, reset, targets, transform, onWindowResize };
+export {
+	init, animate, reset, targets, transform, onWindowResize,
+	ADSB, AIS, GNSSRO, ISM, MAG, TEC
+};
 
 import * as THREE from './lib/three.module.js';
 import { TWEEN } from './lib/jsm/tween.module.min.js';
@@ -13,6 +16,13 @@ import { RO_EVENTS } from '../data/json/gnss-ro.js';
 // import { MAG_EVENTS } from '../data/json/mag.js';
 // import { TEC_EVENTS } from '../data/json/tec.js';
 
+var ADSB = 'adsb';
+var AIS = 'ais';
+var GNSSRO = 'gnssro';
+var ISM = 'ism';
+var MAG = 'mag';
+var TEC = 'tec';
+
 // var ELEMENT_ALPHA = ( Math.random() * 0.5 + 0.25 );
 var ELEMENT_ALPHA = 0.7;
 var MIN_CONTROLS_DISTANCE = 0;
@@ -25,29 +35,22 @@ var ORBIT = false;
 var objects = [];
 var targets = { line: [], sphere: [], helix: [], grid: [] };
 
-function getSelectedEvents() {
-	var switches = document.getElementsByClassName('switch-input');
+function getEventsData(category) {
 	var events = [];
-	for ( var i = 0; i < switches.length; i ++ ) {
-		var sw = switches[i];
-		if (sw.checked == true) {
-			var id = sw.id;
-			if (id.indexOf('adsb') > -1) {
-				events = events.concat(ADSB_EVENTS);
-			} else if (id.indexOf('ais') > -1)  {
-				events = events.concat(AIS_EVENTS);
-			} else if (id.indexOf('gnssro') > -1)  {
-				events = events.concat(RO_EVENTS);
-			}
-			// else if (id.indexOf('ism') > -1)  {
-			// 	events = events.concat(ISM_EVENTS);
-			// } else if (id.indexOf('mag') > -1)  {
-			// 	events = events.concat(MAG_EVENTS);
-			// } else if (id.indexOf('tec') > -1)  {
-			// 	events = events.concat(TEC_EVENTS);
-			// }
-		}
+	if (category == ADSB) {
+		events = events.concat(ADSB_EVENTS);
+	} else if (category == AIS)  {
+		events = events.concat(AIS_EVENTS);
+	} else if (category == GNSSRO)  {
+		events = events.concat(RO_EVENTS);
 	}
+	// else if (category == ISM) {
+	// 	events = events.concat(ISM_EVENTS);
+	// } else if (category == MAG) {
+	// 	events = events.concat(MAG_EVENTS);
+	// } else if (category == TEC) {
+	// 	events = events.concat(TEC_EVENTS);
+	// }
 	return events;
 }
 
@@ -58,13 +61,10 @@ function init() {
 	camera.position.z = INIT_CAMERA_Z;
 	// scene
 	scene = new THREE.Scene();
-
 	renderer = new CSS3DRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.getElementById( 'container' ).appendChild( renderer.domElement );
-
-	//
-
+	// setup controls
 	if (ORBIT == true) {
 		controls = new OrbitControls( camera, renderer.domElement );
 	} else {
@@ -73,24 +73,24 @@ function init() {
 	controls.minDistance = MIN_CONTROLS_DISTANCE;
 	controls.maxDistance = MAX_CONTROLS_DISTANCE;
 	controls.addEventListener( 'change', render );
-	reset();
+	// init with RO events
+	reset(GNSSRO);
 }
 
-// function allSwitchesOff() {
-// 	var switches = document.getElementsByClassName('switch');
-// 	for (var i=0; i<switches.length; i++) {
-// 		var s = switches[i];
-// 		var inp = s.getElementsByTagName('input')[0];
-// 		inp.checked = false;
-// 	}
-// }
+function clearScene() {
+	while(scene.children.length > 0) { 
+	    scene.remove(scene.children[0]);
+	}
+}
 
-function reset() {
+function reset(category) {
+	clearScene();
+	objects = [];
 	targets = { line: [], sphere: [], helix: [], grid: [] };
 	camera.position.x = 0;
 	camera.position.y = 0;
 	camera.position.z = INIT_CAMERA_Z;
-	var events = getSelectedEvents();
+	var events = getEventsData(category);
 	// initialize event objects and line view
 	for ( var i = 0; i < events.length; i ++ ) {
 
@@ -186,45 +186,8 @@ function reset() {
 		targets.grid.push( object );
 	}
 
-	// cube
-
-	// for ( var i = 0; i < objects.length; i ++ ) {
-	// 	var object = new THREE.Object3D();
-	// 	var offset = 1600;
-	// 	var scalar = 800;
-	// 	object.position.x = ( ( i % 5 ) * scalar ) - offset;
-	// 	object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * scalar ) + offset;
-	// 	object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
-	// 	targets.cube.push( object );
-	// }
-
-	//
-}
-
-// this is the bit that makes every event seize up
-// when a transform is initiated via button-press:
-function companyHalt() {
-	// camera.position.set(0, 0, INIT_CAMERA_Z); // Set position like this
-	// camera.lookAt(new THREE.Vector3(0,0,10000)); // Set look at coordinate like this
-	// var duration = 100;
-	for (var i=0; i<objects.length; i++) {
-		objects[i].rotation.x = 0;
-		objects[i].rotation.y = 0;
-		objects[i].rotation.z = 0;
-		objects[i].quaternion.w = 1;
-		objects[i].quaternion.x = 0;
-		objects[i].quaternion.y = 0;
-		objects[i].quaternion.z = 0;
-		// var object = objects[ i ];
-		// new TWEEN.Tween( object.rotation )
-		// 	.to( { x: 0, y: 0, z: 0 }, Math.random() * duration + duration )
-		// 	.easing( TWEEN.Easing.Exponential.InOut )
-		// 	.start();
-		// new TWEEN.Tween( object.quaternion )
-		// 	.to( { x: 0, y: 0, z: 0, w: 1 }, Math.random() * duration + duration )
-		// 	.easing( TWEEN.Easing.Exponential.InOut )
-		// 	.start();
-	}
+	// set initial state
+	transform( targets.helix, 2000 );
 }
 
 function transform( targets, duration ) {
@@ -264,3 +227,29 @@ function animate() {
 function render() {
 	renderer.render( scene, camera );
 }
+
+// // this is the bit that makes every event seize up
+// // when a transform is initiated via button-press:
+// function companyHalt() {
+// 	// camera.position.set(0, 0, INIT_CAMERA_Z); // Set position like this
+// 	// camera.lookAt(new THREE.Vector3(0,0,10000)); // Set look at coordinate like this
+// 	// var duration = 100;
+// 	for (var i=0; i<objects.length; i++) {
+// 		objects[i].rotation.x = 0;
+// 		objects[i].rotation.y = 0;
+// 		objects[i].rotation.z = 0;
+// 		objects[i].quaternion.w = 1;
+// 		objects[i].quaternion.x = 0;
+// 		objects[i].quaternion.y = 0;
+// 		objects[i].quaternion.z = 0;
+// 		// var object = objects[ i ];
+// 		// new TWEEN.Tween( object.rotation )
+// 		// 	.to( { x: 0, y: 0, z: 0 }, Math.random() * duration + duration )
+// 		// 	.easing( TWEEN.Easing.Exponential.InOut )
+// 		// 	.start();
+// 		// new TWEEN.Tween( object.quaternion )
+// 		// 	.to( { x: 0, y: 0, z: 0, w: 1 }, Math.random() * duration + duration )
+// 		// 	.easing( TWEEN.Easing.Exponential.InOut )
+// 		// 	.start();
+// 	}
+// }

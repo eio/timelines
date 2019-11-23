@@ -1,6 +1,6 @@
 export {
 	init, animate, reset, targets, transform, onWindowResize,
-	ADSB, AIS, GNSSRO, ISM, MAG, TEC
+	ADSB, AIS, GNSSRO, ISI, MAG, TEC
 };
 
 import * as THREE from './lib/three.module.js';
@@ -12,14 +12,14 @@ import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 import { ADSB_EVENTS } from '../data/json/ads-b.js';
 import { AIS_EVENTS } from '../data/json/ais.js';
 import { RO_EVENTS } from '../data/json/gnss-ro.js';
-// import { ISM_EVENTS } from '../data/json/ism.js';
+// import { ISI_EVENTS } from '../data/json/isi.js';
 // import { MAG_EVENTS } from '../data/json/mag.js';
 // import { TEC_EVENTS } from '../data/json/tec.js';
 
 var ADSB = 'adsb';
 var AIS = 'ais';
 var GNSSRO = 'gnssro';
-var ISM = 'ism';
+var ISI = 'isi';
 var MAG = 'mag';
 var TEC = 'tec';
 
@@ -44,8 +44,8 @@ function getEventsData(category) {
 	} else if (category == GNSSRO)  {
 		events = events.concat(RO_EVENTS);
 	}
-	// else if (category == ISM) {
-	// 	events = events.concat(ISM_EVENTS);
+	// else if (category == ISI) {
+	// 	events = events.concat(ISI_EVENTS);
 	// } else if (category == MAG) {
 	// 	events = events.concat(MAG_EVENTS);
 	// } else if (category == TEC) {

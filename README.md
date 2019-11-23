@@ -1,6 +1,6 @@
 # 3D WebGL Timeline #
 
-Try it out here: https://eio.github.io/gnss-ro-timeline/
+Try it out here: https://eio.github.io/timelines/
 
 
 ## Sources ##

@@ -1,0 +1,38 @@
+<svg id="svg-dash" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+    <path id="0a_path" d="M 100 150 A 101 100 0 1 1 300 150"/>
+    <path id="0b_path" d="M 100 135 A 100 100 0 1 1 300 150"/>
+    <path id="0c_path" d="M 100 150 A 100 100 0 1 1 300 150"/>
+    <path id="0d_path" d="M 100 150 A 100 90 0 1 1 300 150"/>
+    <path id="0e_path" d="M 100 150 A 100 80 0 1 1 300 150"/>
+    <path id="0f_path" d="M 100 150 A 100 70 0 1 1 300 150"/>
+    <path id="0g_path" d="M 100 150 A 100 60 0 1 1 300 150"/>
+    <path id="0h_path" d="M 100 150 A 100 50 0 1 1 300 150"/>
+    <path id="0i_path" d="M 100 150 A 100 40 0 1 1 300 150"/>
+    <path id="0j_path" d="M 100 150 A 100 30 0 1 1 300 150"/>
+    <path id="0k_path" d="M 100 150 A 100 20 0 1 1 300 150"/>
+    <path id="0l_path" d="M 100 150 A 100 10 0 1 1 300 150"/>
+    <path id="0m_path" d="M 100 150 A 100  0 0 1 1 300 150"/>
+</defs>
+<use xlink:href="#0a_path" stroke="#283446" stroke-width="2.0" fill="none" fill-opacity="0.9"/>
+<use xlink:href="#0b_path" stroke="#283446" stroke-width="1.5" fill="none" fill-opacity="0.7"/>
+<use xlink:href="#0c_path" stroke="#283446" stroke-width="1.0" fill="none" fill-opacity="0.5"/>
+<use xlink:href="#0d_path" stroke="#283446" stroke-width="1.0" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0e_path" stroke="#283446" stroke-width="0.5" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0f_path" stroke="#283446" stroke-width="0.5" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0g_path" stroke="#283446" stroke-width="0.5" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0h_path" stroke="#283446" stroke-width="0.4" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0i_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0j_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0k_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0l_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+<use xlink:href="#0m_path" stroke="#283446" stroke-width="0.2" fill="none" fill-opacity="0.2"/>
+<!-- 			    <g font-family="Helvetica" fill="rgb(80,120,220)" font-size="12px" fill-opacity="0.75">
+    <text text-anchor="middle">
+        <textPath xlink:href="#text_0_path" startOffset="20%">LINE</textPath>
+        <textPath xlink:href="#text_0_path" startOffset="40%">SPHERE</textPath>
+        <textPath xlink:href="#text_0_path" startOffset="60%">HELIX</textPath>
+        <textPath xlink:href="#text_0_path" startOffset="80%">GRID</textPath>
+    </text>
+</g> -->
+</svg>

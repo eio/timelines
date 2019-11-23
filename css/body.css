@@ -32,7 +32,7 @@ body {
   overflow: hidden;
 }
 
-/*.noselect {
+.no_select {
   -webkit-touch-callout: none;
     -webkit-user-select: none;
      -khtml-user-select: none;
@@ -40,4 +40,3 @@ body {
         -ms-user-select: none;
             user-select: none;
 }
-*/

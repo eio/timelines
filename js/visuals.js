@@ -180,9 +180,9 @@ function reset(category) {
 		var object = new THREE.Object3D();
 		var offset = 1600;
 		var scalar = 800;
-		object.position.x = ( ( i % 3 ) * scalar ) - offset;
-		object.position.y = ( - ( Math.floor( i / 3 ) % 3 ) * scalar ) + offset;
-		object.position.z = ( Math.floor( i / 9 ) ) * 1000 - 2000;
+		object.position.x = ( ( i % 5 ) * scalar ) - offset;
+		object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * scalar ) + offset;
+		object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
 		targets.grid.push( object );
 	}
 

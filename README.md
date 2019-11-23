@@ -3,6 +3,14 @@
 Try it out here: https://eio.github.io/timelines/
 
 
+## Running Locally ##
+
+From the top-level dir run:
+`python -m SimpleHTTPServer`
+
+Then visit http://localhost:8000
+
+
 ## Sources ##
 
 - https://www.nasa.gov/vision/earth/lookingatearth/cosmicf-20061130.html
@@ -28,10 +36,3 @@ Try it out here: https://eio.github.io/timelines/
 - https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast
 - https://www.globenewswire.com/news-release/2019/10/16/1930562/0/en/Spire-Announces-AirSafe-The-first-ADS-B-product-from-Spire-Aviation.html
 - https://www.spire.com/en/company/news/2019/03/spire-s-first-ads-b-plane-tracking-satellites-to-enter-service-by-the-end-of-q3
-
-## Running Locally ##
-
-From the top-level dir run:
-`python -m SimpleHTTPServer`
-
-Then visit http://localhost:8000

@@ -5,7 +5,8 @@ export {
 
 import * as THREE from './lib/three.module.js';
 import { TWEEN } from './lib/jsm/tween.module.min.js';
-import { TrackballControls } from './lib/jsm/TrackballControls.js';
+import { FlyControls } from './lib/jsm/FlyControls.js';
+// import { TrackballControls } from './lib/jsm/TrackballControls.js';
 import { OrbitControls } from './lib/jsm/OrbitControls.js';
 import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 
@@ -32,8 +33,13 @@ var camera, scene, renderer;
 var controls;
 var ORBIT = false;
 
+var CONT_MVMT_SPEED = 2000;
+var CONT_ROLL_SPEED = 0.7;
+
 var objects = [];
 var targets = { line: [], sphere: [], helix: [], grid: [] };
+
+var clock = new THREE.Clock();
 
 function getEventsData(category) {
 	var events = [];
@@ -68,11 +74,19 @@ function init() {
 	if (ORBIT == true) {
 		controls = new OrbitControls( camera, renderer.domElement );
 	} else {
-		controls = new TrackballControls( camera, renderer.domElement );
+		// CONTROLS
+		controls = new FlyControls( camera, renderer.domElement );
+		controls.movementSpeed = CONT_MVMT_SPEED;
+		controls.domElement = container;
+		// controls.rollSpeed = Math.PI / 24;
+		controls.rollSpeed = CONT_ROLL_SPEED;
+		controls.autoForward = false;
+		controls.dragToLook = true;
+		// controls.dragToLook = false;
 	}
 	controls.minDistance = MIN_CONTROLS_DISTANCE;
 	controls.maxDistance = MAX_CONTROLS_DISTANCE;
-	controls.addEventListener( 'change', render );
+	// controls.addEventListener( 'change', render );
 	// init with RO events
 	reset(GNSSRO);
 }
@@ -219,9 +233,14 @@ function onWindowResize() {
 }
 
 function animate() {
+	renderer.render( scene, camera );
+
 	requestAnimationFrame( animate );
 	TWEEN.update();
-	controls.update();
+	// controls.update();
+
+	var delta = clock.getDelta();
+	controls.update( delta );
 }
 
 function render() {

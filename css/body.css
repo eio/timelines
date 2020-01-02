@@ -40,3 +40,15 @@ body {
         -ms-user-select: none;
             user-select: none;
 }
+
+#controls {
+  position: absolute;
+  font-size: 10px;
+  bottom: 1em;
+  left: 1em;
+  color: rgba(80,160,255,0.75);
+}
+.keys {
+  font-weight: bold;
+  color: rgba(80,160,255,1);
+}

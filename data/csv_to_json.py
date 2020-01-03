@@ -10,11 +10,16 @@ args = parser.parse_args()
 eventlist = []
 
 with open(args.inputf, 'r') as csvfile:
-  reader = csv.DictReader(csvfile)
-  for e in reader:
-    eventlist.append(e)
+	reader = csv.DictReader(csvfile)
+	for e in reader:
+		eventlist.append(e)
 
 datatype = args.inputf.replace('.csv','')
 
 with open(datatype+'.js', 'w') as outfile:
-  outfile.write("export var EVENTS = %s%s" % (json.dumps(eventlist), ';'))
+	if 'ais' in datatype:
+		outfile.write("export var AIS_EVENTS = %s%s" % (json.dumps(eventlist), ';'))
+	elif 'ads-b' in datatype:
+		outfile.write("export var ADSB_EVENTS = %s%s" % (json.dumps(eventlist), ';'))
+	elif 'gnss-ro' in datatype:
+		outfile.write("export var RO_EVENTS = %s%s" % (json.dumps(eventlist), ';'))

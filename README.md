@@ -36,3 +36,17 @@ Then visit http://localhost:8000
 - https://en.wikipedia.org/wiki/Automatic_dependent_surveillance_%E2%80%93_broadcast
 - https://www.globenewswire.com/news-release/2019/10/16/1930562/0/en/Spire-Announces-AirSafe-The-first-ADS-B-product-from-Spire-Aviation.html
 - https://www.spire.com/en/company/news/2019/03/spire-s-first-ads-b-plane-tracking-satellites-to-enter-service-by-the-end-of-q3
+- https://ethicsstandards.org/wp-content/uploads/2018/07/iec-logo.jpg
+- http://www.spc.int/sites/default/files/pages/en/2018-03/imo-spc-partner_1.jpg
+- http://autosea.github.io/assets/intention_1.png
+- https://spire.com/spirepedia/satellite-ais
+- https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2014/07/sat-ais_artists_impression/14613281-1-eng-GB/SAT-AIS_artists_impression_pillars.jpg
+- https://ast.porttechnology.org/wp-content/media/20190629070655/SatiStock-155439194_1280_800_84_s_c1-640x400.jpg
+- https://cdnkey-bb0b.kxcdn.com/Comar_20csb200hr_small.jpg
+- https://www.nasa.gov/images/content/378095main_129patch_226.jpg
+- https://www.dsjournal.com/wp-content/uploads/2019/08/smallsats-1280x640.jpg
+- http://underwatermunitions.org/wp-content/uploads/2017/12/The-Norwegian-Defence-Research-Establishment-FFI.jpg
+- http://successinfuture.com/wp-content/uploads/2019/07/ISRO-Recruitment.jpg
+- https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX5-U5pUxFSuooTmNX04sb3VR3QRPclJYwn2Yc-vWLLLhdhtxq&s
+- https://ec.europa.eu/fisheries/sites/fisheries/files/img/body/vessel_monitoring_system_en.jpg
+- https://specials-images.forbesimg.com/imageserve/5d78e1ea0762110008c1e5b1/960x0.gif

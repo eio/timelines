@@ -17,6 +17,8 @@ import { RO_EVENTS } from '../data/json/gnss-ro.js';
 // import { MAG_EVENTS } from '../data/json/mag.js';
 // import { TEC_EVENTS } from '../data/json/tec.js';
 
+// // Datatypes from:
+// // https://www.spire.com/en/sample-data
 var ADSB = 'adsb';
 var AIS = 'ais';
 var GNSSRO = 'gnssro';
@@ -101,9 +103,12 @@ function reset(category) {
 	clearScene();
 	objects = [];
 	targets = { line: [], sphere: [], helix: [], grid: [] };
+	// reset camera position
 	camera.position.x = 0;
 	camera.position.y = 0;
 	camera.position.z = INIT_CAMERA_Z;
+	// make sure camera is pointed correctly
+	camera.lookAt( scene.position );
 	var events = getEventsData(category);
 	// initialize event objects and line view
 	for ( var i = 0; i < events.length; i ++ ) {

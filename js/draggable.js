@@ -1,6 +1,6 @@
 // https://www.w3schools.com/howto/howto_js_draggable.asp
 
-// make the DIV element draggagle:
+// make the widget DIV element draggagle:
 dragElement(document.getElementById("widget"));
 
 function dragElement(elmnt) {

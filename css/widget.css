@@ -27,7 +27,7 @@
 }
 
 button {
-	font-size: 90%;
+	font-size: 10px;
 	font-weight: 400;
 	border-radius: 1px;
 	text-transform: uppercase;
@@ -67,6 +67,7 @@ button:active {
 #transformations {
 	top: 0%;
 	width: 100%;
+	max-width: 100%;
 }
 
 #line {

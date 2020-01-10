@@ -1,3 +1,5 @@
+// adapted from https://threejs.org/examples/css3d_periodictable.html
+
 export {
 	init, animate, reset, targets, transform, onWindowResize,
 	ADSB, AIS, GNSSRO, ISI, MAG, TEC

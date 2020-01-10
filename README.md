@@ -13,6 +13,10 @@ Then visit http://localhost:8000
 
 ## Sources ##
 
+Code adapted from: https://threejs.org/examples/css3d_periodictable.html
+
+Data sourced from:
+
 - https://www.nasa.gov/vision/earth/lookingatearth/cosmicf-20061130.html
 - https://www.nasa.gov/vision/earth/lookingatearth/cosmicf-20061130a.html
 - https://www.cosmic.ucar.edu/what-we-do/gnss-radio-occultation/

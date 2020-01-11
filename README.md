@@ -15,7 +15,7 @@ Then visit http://localhost:8000
 
 Code adapted from: https://threejs.org/examples/css3d_periodictable.html
 
-Data sourced from:
+#### AIS / ADS-B / GNSS-RO data sourced from:
 
 - https://www.nasa.gov/vision/earth/lookingatearth/cosmicf-20061130.html
 - https://www.nasa.gov/vision/earth/lookingatearth/cosmicf-20061130a.html
@@ -70,3 +70,23 @@ Data sourced from:
 - https://pbs.twimg.com/media/EME7UInXYAE30RA.jpg
 - https://maritime.spire.com/wp-content/uploads/2019/03/Spire_Maritime_Logo.png
 - https://www.globenewswire.com/news-release/2019/09/11/1914176/0/en/Spire-Announces-First-Weather-Product-Spire-Forecast.html
+- https://en.wikipedia.org/wiki/UNAVCO
+
+#### Magnetometer (MAG) data sourced from:
+
+- https://www.ctsystems.eu/support/magnetometer-the-history/
+- https://www.sciencedirect.com/topics/engineering/magnetometer
+
+#### Ionospheric Scintillation Indices (ISI) data sourced from:
+
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4480951/ (A Review of Ionospheric Scintillation Models)
+- https://www.researchgate.net/publication/268099826_Developing_an_Ionospheric_Scintillation_Monitoring_Receiver
+- http://swe.ssa.esa.int/web/guest/ism-public ("Space Situational Awareness" active monitoring service from ESA)
+- http://swe.ssa.esa.int/web/guest/TIO_sci
+- https://www.researchgate.net/publication/225004499_Ionospheric_scintillation_monitoring_and_modelling
+
+#### Total Electron Content (TEC) data sourced from:
+
+- https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005RS003394 ("Historical Context" section)
+- https://www.swpc.noaa.gov/products/north-american-total-electron-content (History tab)
+- https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018RS006575 ("investigations of TEC began with...")

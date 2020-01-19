@@ -23,6 +23,14 @@ body {
                                   supported by Chrome and Opera */
 }
 
+#gitcat {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
 #container {
   overflow: hidden;
   position: relative;

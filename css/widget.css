@@ -91,6 +91,11 @@ button:active {
 	margin-top: 10px;
 }
 
+/*@-moz-document url-prefix() {
+  #svg-dash {
+  }
+}*/
+
 #datatypes {
 	bottom: 20%;
 }

@@ -90,3 +90,6 @@ Code adapted from: https://threejs.org/examples/css3d_periodictable.html
 - https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005RS003394 ("Historical Context" section)
 - https://www.swpc.noaa.gov/products/north-american-total-electron-content (History tab)
 - https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018RS006575 ("investigations of TEC began with...")
+
+
+https://spacenews.com/house-panel-approves-space-weather-bill/

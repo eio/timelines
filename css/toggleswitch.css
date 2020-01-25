@@ -2,15 +2,6 @@
 /* maybe: https://www.schemecolor.com/pale-rainbow.php */
 /* https://jariz.github.io/vibrant.js/ */
 
-#isi-switch,
-#mag-switch,
-#tec-switch,
-#isi,
-#mag,
-#tec {
-  pointer-events: none;
-}
-
 .switch {
   position: absolute;
   outline: none;

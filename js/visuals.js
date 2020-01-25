@@ -2,7 +2,7 @@
 
 export {
 	init, animate, reset, targets, transform, onWindowResize,
-	ADSB, AIS, GNSSRO, ISI, MAG, TEC
+	ADSB, AIS, GNSSRO, SW
 };
 
 import * as THREE from './lib/three.module.js';
@@ -15,18 +15,14 @@ import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 import { ADSB_EVENTS } from '../data/json/ads-b.js';
 import { AIS_EVENTS } from '../data/json/ais.js';
 import { RO_EVENTS } from '../data/json/gnss-ro.js';
-// import { ISI_EVENTS } from '../data/json/isi.js';
-// import { MAG_EVENTS } from '../data/json/mag.js';
-// import { TEC_EVENTS } from '../data/json/tec.js';
+import { SW_EVENTS } from '../data/json/space-weather.js';
 
 // // Datatypes from:
 // // https://www.spire.com/en/sample-data
 var ADSB = 'adsb';
 var AIS = 'ais';
 var GNSSRO = 'gnssro';
-var ISI = 'isi';
-var MAG = 'mag';
-var TEC = 'tec';
+var SW = 'sw';
 
 // var ELEMENT_ALPHA = ( Math.random() * 0.5 + 0.25 );
 var ELEMENT_ALPHA = 0.7;
@@ -53,14 +49,9 @@ function getEventsData(category) {
 		events = events.concat(AIS_EVENTS);
 	} else if (category == GNSSRO)  {
 		events = events.concat(RO_EVENTS);
+	} else if (category == SW) {
+		events = events.concat(SW_EVENTS);
 	}
-	// else if (category == ISI) {
-	// 	events = events.concat(ISI_EVENTS);
-	// } else if (category == MAG) {
-	// 	events = events.concat(MAG_EVENTS);
-	// } else if (category == TEC) {
-	// 	events = events.concat(TEC_EVENTS);
-	// }
 	return events;
 }
 
@@ -91,8 +82,8 @@ function init() {
 	controls.minDistance = MIN_CONTROLS_DISTANCE;
 	controls.maxDistance = MAX_CONTROLS_DISTANCE;
 	// controls.addEventListener( 'change', render );
-	// init with RO events
-	reset(GNSSRO);
+	// init with Space Weather events
+	reset(SW);
 }
 
 function clearScene() {

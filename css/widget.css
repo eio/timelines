@@ -132,15 +132,7 @@ button:active {
 	margin-top: -70px;
 	margin-left: -135px;
 }
-#ism-switch {
-	margin-top: -70px;
-	margin-left: -135px;
-}
-#mag-switch {
-	margin-top: -70px;
-	margin-left: -135px;
-}
-#tec-switch {
+#sw-switch {
 	margin-top: -70px;
 	margin-left: -135px;
 }

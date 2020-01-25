@@ -15,7 +15,7 @@ Then visit http://localhost:8000
 
 Code adapted from: https://threejs.org/examples/css3d_periodictable.html
 
-#### AIS / ADS-B / GNSS-RO data sourced from:
+#### AIS / ADS-B / GNSS-RO sources
 
 - https://www.nasa.gov/vision/earth/lookingatearth/cosmicf-20061130.html
 - https://www.nasa.gov/vision/earth/lookingatearth/cosmicf-20061130a.html
@@ -72,24 +72,23 @@ Code adapted from: https://threejs.org/examples/css3d_periodictable.html
 - https://www.globenewswire.com/news-release/2019/09/11/1914176/0/en/Spire-Announces-First-Weather-Product-Spire-Forecast.html
 - https://en.wikipedia.org/wiki/UNAVCO
 
-#### Magnetometer (MAG) data sourced from:
+#### Space Weather sources
 
+- https://en.wikipedia.org/wiki/Solar_storm_of_1859
+- https://en.wikipedia.org/wiki/Coronal_mass_ejection
+- https://www.ncep.noaa.gov/director/ucar_reports/SWPC_Report_UCAR_Final.pdf
 - https://www.ctsystems.eu/support/magnetometer-the-history/
 - https://www.sciencedirect.com/topics/engineering/magnetometer
-
-#### Ionospheric Scintillation Indices (ISI) data sourced from:
-
-- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4480951/ (A Review of Ionospheric Scintillation Models)
+- https://www.metoffice.gov.uk/about-us/press-office/news/weather-and-climate/2019/space-weather-funding
+- http://swe.ssa.esa.int/TECEES/spweather/workshops/workshops.html
+- http://spaceweatherlivinghistory.org/timeline
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4480951/
 - https://www.researchgate.net/publication/268099826_Developing_an_Ionospheric_Scintillation_Monitoring_Receiver
-- http://swe.ssa.esa.int/web/guest/ism-public ("Space Situational Awareness" active monitoring service from ESA)
+- http://swe.ssa.esa.int/web/guest/ism-public
 - http://swe.ssa.esa.int/web/guest/TIO_sci
 - https://www.researchgate.net/publication/225004499_Ionospheric_scintillation_monitoring_and_modelling
-
-#### Total Electron Content (TEC) data sourced from:
-
-- https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005RS003394 ("Historical Context" section)
-- https://www.swpc.noaa.gov/products/north-american-total-electron-content (History tab)
-- https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018RS006575 ("investigations of TEC began with...")
-
-
-https://spacenews.com/house-panel-approves-space-weather-bill/
+- https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2005RS003394
+- https://www.swpc.noaa.gov/products/north-american-total-electron-content
+- https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018RS006575
+- https://spacenews.com/house-panel-approves-space-weather-bill/
+- https://www.sciencedirect.com/topics/earth-and-planetary-sciences/ionospheric-storm

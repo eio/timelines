@@ -1,6 +1,6 @@
 import {
 	targets, transform, onWindowResize, reset,
-	ADSB, AIS, GNSSRO, ISI, MAG, TEC
+	ADSB, AIS, GNSSRO, SW
 } from './visuals.js';
 
 // handle window resize
@@ -45,12 +45,8 @@ function switchChange(evt, elem) {
 			reset(AIS);
 		} else if (ident.indexOf(GNSSRO) > -1)  {
 			reset(GNSSRO);
-		} else if (ident.indexOf(ISI) > -1) {
-			reset(ISI);
-		} else if (ident.indexOf(MAG) > -1) {
-			reset(MAG);
-		} else if (ident.indexOf(TEC) > -1) {
-			reset(TEC);
+		} else if (ident.indexOf(SW) > -1) {
+			reset(SW);
 		}
 	}
 }
@@ -86,36 +82,16 @@ var handler = function (e) {
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
 document.getElementById('gnssro-switch').addEventListener( 'change', switchChange, false );
-var text = document.getElementById( 'isi' );
+var text = document.getElementById( 'sw' );
 var handler = function (e) {
 	e.preventDefault();
-	var elem = document.getElementById('isi-switch');
+	var elem = document.getElementById('sw-switch');
 	elem.checked = !elem.checked;
 	switchChange(null, elem);
 };
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
-document.getElementById('isi-switch').addEventListener( 'change', switchChange, false );
-var text = document.getElementById( 'mag' );
-var handler = function (e) {
-	e.preventDefault();
-	var elem = document.getElementById('mag-switch');
-	elem.checked = !elem.checked;
-	switchChange(null, elem);
-};
-text.addEventListener( 'click', handler, false );
-text.addEventListener( 'touchstart', handler, false );
-document.getElementById('mag-switch').addEventListener( 'change', switchChange, false );
-var text = document.getElementById( 'tec' );
-var handler = function (e) {
-	e.preventDefault();
-	var elem = document.getElementById('tec-switch');
-	elem.checked = !elem.checked;
-	switchChange(null, elem);
-};
-text.addEventListener( 'click', handler, false );
-text.addEventListener( 'touchstart', handler, false );
-document.getElementById('tec-switch').addEventListener( 'change', switchChange, false );
+document.getElementById('sw-switch').addEventListener( 'change', switchChange, false );
 
 // document.body.addEventListener('keydown', function logKey(e) {
 //   	console.log(camera.position)

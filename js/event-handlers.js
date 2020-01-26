@@ -1,6 +1,6 @@
 import {
 	targets, transform, onWindowResize, reset,
-	ADSB, AIS, GNSSRO, SW
+	ADSB, AIS, GNSSRO, GNSSR, SW
 } from './visuals.js';
 
 // handle window resize
@@ -45,6 +45,8 @@ function switchChange(evt, elem) {
 			reset(AIS);
 		} else if (ident.indexOf(GNSSRO) > -1)  {
 			reset(GNSSRO);
+		} else if (ident.indexOf(GNSSR) > -1)  {
+			reset(GNSSR);
 		} else if (ident.indexOf(SW) > -1) {
 			reset(SW);
 		}
@@ -82,6 +84,16 @@ var handler = function (e) {
 text.addEventListener( 'click', handler, false );
 text.addEventListener( 'touchstart', handler, false );
 document.getElementById('gnssro-switch').addEventListener( 'change', switchChange, false );
+var text = document.getElementById( 'gnss-r' );
+var handler = function (e) {
+	e.preventDefault();
+	var elem = document.getElementById('gnssr-switch');
+	elem.checked = !elem.checked;
+	switchChange(null, elem);
+};
+text.addEventListener( 'click', handler, false );
+text.addEventListener( 'touchstart', handler, false );
+document.getElementById('gnssr-switch').addEventListener( 'change', switchChange, false );
 var text = document.getElementById( 'sw' );
 var handler = function (e) {
 	e.preventDefault();

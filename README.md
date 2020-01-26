@@ -72,6 +72,22 @@ Code adapted from: https://threejs.org/examples/css3d_periodictable.html
 - https://www.globenewswire.com/news-release/2019/09/11/1914176/0/en/Spire-Announces-First-Weather-Product-Spire-Forecast.html
 - https://en.wikipedia.org/wiki/UNAVCO
 
+#### GNSS-R Sources
+
+- https://spacenews.com/spire-gnss-reflectometry/
+- https://www.sciencedirect.com/science/article/abs/pii/S0034425705002932
+- https://nsidc.org/data/amsr_validation/soil_moisture/smex02/about_smex02.html
+- https://journals.ametsoc.org/doi/full/10.1175/1520-0426%282004%29021%3C0515%3AROOSWS%3E2.0.CO%3B2
+- https://ieeexplore.ieee.org/document/7327007
+- https://meetingorganizer.copernicus.org/EGU2019/EGU2019-14628.pdf
+- https://www.researchgate.net/publication/316029302_Statistical_Comparison_and_Combination_of_GPS_GLONASS_and_Multi-GNSS_Multipath_Reflectometry_Applied_to_Snow_Depth_Retrieval
+- https://www.semanticscholar.org/paper/GNSS-reflectometry-measurement-of-snow-depth-and-in-Boniface-Walpersdorf/7c3e73e2f903589a425a257da44aebfa6a9811eb
+- https://www.researchgate.net/publication/293191513_Monitoring_Snow_Depth_by_GNSS_Reflectometry_in_Built-up_Areas_A_Case_Study_for_Wettzell_Germany
+- https://en.wikipedia.org/wiki/Langley_Research_Center
+- https://en.wikipedia.org/wiki/GNSS_reflectometry
+- https://www.researchgate.net/publication/241087752_The_impact_on_tsunami_detection_from_space_using_GNSS-reflectometry_when_combining_GPS_with_GLONASS_and_Galileo
+- https://connect.unavco.org/display/pub356948
+
 #### Space Weather sources
 
 - https://en.wikipedia.org/wiki/Solar_storm_of_1859

@@ -23,5 +23,7 @@ with open(datatype+'.js', 'w') as outfile:
 		outfile.write("export var ADSB_EVENTS = %s%s" % (json.dumps(eventlist), ';'))
 	elif 'gnss-ro' in datatype:
 		outfile.write("export var RO_EVENTS = %s%s" % (json.dumps(eventlist), ';'))
+	elif 'gnss-r' in datatype:
+		outfile.write("export var R_EVENTS = %s%s" % (json.dumps(eventlist), ';'))
 	elif 'space-weather' in datatype:
 		outfile.write("export var SW_EVENTS = %s%s" % (json.dumps(eventlist), ';'))

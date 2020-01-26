@@ -2,7 +2,7 @@
 
 export {
 	init, animate, reset, targets, transform, onWindowResize,
-	ADSB, AIS, GNSSRO, SW
+	ADSB, AIS, GNSSRO, GNSSR, SW
 };
 
 import * as THREE from './lib/three.module.js';
@@ -15,6 +15,7 @@ import { CSS3DRenderer, CSS3DObject } from './lib/jsm/CSS3DRenderer.js';
 import { ADSB_EVENTS } from '../data/json/ads-b.js';
 import { AIS_EVENTS } from '../data/json/ais.js';
 import { RO_EVENTS } from '../data/json/gnss-ro.js';
+import { R_EVENTS } from '../data/json/gnss-r.js';
 import { SW_EVENTS } from '../data/json/space-weather.js';
 
 // // Datatypes from:
@@ -22,6 +23,7 @@ import { SW_EVENTS } from '../data/json/space-weather.js';
 var ADSB = 'adsb';
 var AIS = 'ais';
 var GNSSRO = 'gnssro';
+var GNSSR = 'gnssr';
 var SW = 'sw';
 
 // var ELEMENT_ALPHA = ( Math.random() * 0.5 + 0.25 );
@@ -49,6 +51,8 @@ function getEventsData(category) {
 		events = events.concat(AIS_EVENTS);
 	} else if (category == GNSSRO)  {
 		events = events.concat(RO_EVENTS);
+	} else if (category == GNSSR)  {
+		events = events.concat(R_EVENTS);
 	} else if (category == SW) {
 		events = events.concat(SW_EVENTS);
 	}

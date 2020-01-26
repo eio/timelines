@@ -33,7 +33,6 @@ var MAX_CONTROLS_DISTANCE = 12300;
 var INIT_CAMERA_Z = 8000;
 var camera, scene, renderer;
 var controls;
-var ORBIT = false;
 
 var CONT_MVMT_SPEED = 2000;
 var CONT_ROLL_SPEED = 0.7;
@@ -70,7 +69,8 @@ function init() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.getElementById( 'container' ).appendChild( renderer.domElement );
 	// setup controls
-	if (ORBIT == true) {
+	if (window.mobilecheck() == true) {
+		// different controls for mobile device
 		controls = new OrbitControls( camera, renderer.domElement );
 	} else {
 		// CONTROLS

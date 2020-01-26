@@ -5,7 +5,7 @@ html {
 
 body {
 	overflow: hidden;
-	position: fixed;
+	position: relative;
 	/*font-family: Monospace;*/
 	font-family: Helvetica, sans-serif;
 	margin: 0;

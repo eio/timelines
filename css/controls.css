@@ -5,11 +5,10 @@
 	left: 1em;
 	color: rgba(80,160,255,0.75);
 }
-
-#controls:hover {
+/*#controls:hover {
 	font-size: 20px;
 }
-
+*/
 .keys {
 	font-weight: bold;
 	color: rgba(80,160,255,1);

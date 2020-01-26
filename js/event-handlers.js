@@ -6,6 +6,15 @@ import {
 // handle window resize
 window.addEventListener( 'resize', onWindowResize, false );
 
+// increase size of Controls text on hover
+var controls = document.getElementById('controls');
+controls.onmouseover = function() {
+	controls.style.fontSize = '22px';
+}
+controls.onmouseout = function() {
+	controls.style.fontSize = '12px';
+}
+
 // handle button press
 var button = document.getElementById( 'line' );
 button.addEventListener( 'click', function () {
